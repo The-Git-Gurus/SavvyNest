@@ -1,71 +1,228 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/faculty.css">
-    <title>Faculty Page</title>
-</head>
-<body>
-    <header>
-        <h1>Our Faculty</h1>
-        <input type="text" id="searchBar" placeholder="Search Faculty..." onkeyup="searchFaculty()">
-    </header>
-    <main>
-        <div class="faculty-container" id="facultyContainer">
-            <div class="faculty-box">
-                <img src="https://media.istockphoto.com/id/1349124672/photo/cheerful-young-businesswoman-wearing-in-ear-headphones-and-smiling-at-camera.jpg?s=612x612&w=0&k=20&c=gkyfrQA-oiClCtncrdCkAGIe5fexLiGqDD6fK7tagLM=" alt="Faculty Member">
-                <h2>Dr. Jenny</h2>
-                <p>Professor of Computer Science</p>
-            </div>
-            <div class="faculty-box">
-                <img src="https://media.istockphoto.com/id/1349124662/photo/young-businesswoman-wearing-in-ear-headphones-and-smiling-at-camera.jpg?s=612x612&w=0&k=20&c=t2QUWHyXgUH-kB7C7pfmiO-3myIAGHKQ1jWuuQphT-I=" alt="Faculty Member">
-                <h2>Dr. Romaina</h2>
-                <p>Professor of Computer Science</p>
-            </div>
-            <div class="faculty-box">
-                <img src="https://media.istockphoto.com/id/648013498/photo/beautiful-girl-posing-in-the-park.jpg?s=612x612&w=0&k=20&c=0aWKkBCSTwfrEiqTyKHXtTWAYSAsoRk0p66MWlzRBhU=" alt="Faculty Member">
-                <h2>Dr. Sukhpreet</h2>
-                <p>Professor of Computer Science</p>
-            </div>
-            <div class="faculty-box">
-                <img src="https://images.unsplash.com/photo-1621786037709-6c700b14ea75?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Faculty Member">
-                <h2>Dr. Jasmine Kaur</h2>
-                <p>Associate Professor of Python</p>
-            </div>
-            <div class="faculty-box">
-                <img src="https://media.istockphoto.com/id/2153383214/photo/portrait-of-business-in-elegant-suit-standing-over-white-background.jpg?s=612x612&w=0&k=20&c=fm_v5myz-xpiU54tzwFyipPPGfw1BL-1MbbBCt0ivdg=" alt="Faculty Member">
-                <h2>Dr. John Doe</h2>
-                <p>Professor of Computer Science</p>
-            </div>
-            <div class="faculty-box">
-                <img src="https://dmf76jm51vpov.cloudfront.net/upload/2023/260cb647-b4c8-4f0c-88db-c6ff50ef57a4.png" alt="Faculty Member">
-                <h2>Dr. Anushka</h2>
-                <p>Associate Professor of Mathematics</p>
-            </div>
-            <div class="faculty-box">
-                <img src="https://media.istockphoto.com/id/1827398164/photo/happy-young-man-smiling-looking-away-dreaming-resting-good-news-feel-satisfied-in-city-street.jpg?s=612x612&w=0&k=20&c=kUP4Gshno-Zuk9Efm8zkpIYP1Fd-EnQl7sBDiVDbNZw=" alt="Faculty Member">
-                <h2>Dr. Anil</h2>
-                <p>Lecturer in Physics</p>
-            </div>
-        </div>
-    </main>
+ <head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Savvy Nest</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+   rel="stylesheet"
+  />
+  <link
+   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+   rel="stylesheet"
+  />
+  <style>
+   body {
+    font-family: "Inter", sans-serif;
+   }
+  </style>
+ </head>
+ <body class="bg-gradient-to-br from-blue-50 via-white to-blue-50 text-gray-800">
+  <main class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 py-16">
+   <h1
+    class="text-5xl font-extrabold text-center text-blue-700 mb-12 drop-shadow-md"
+   >
+    Meet Our Expert Faculty
+   </h1>
 
-    <script>
-        function searchFaculty() {
-            let input = document.getElementById('searchBar').value.toLowerCase();
-            let facultyContainer = document.getElementById('facultyContainer');
-            let facultyBoxes = facultyContainer.getElementsByClassName('faculty-box');
+   <section
+    class="grid grid-cols-1 sm:grid-cols-3 gap-10 max-w-5xl mx-auto mb-16"
+   >
+    <article
+     class="bg-white rounded-3xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl"
+    >
+     <img
+      alt="Portrait of Dr. Sophia Nguyen, a middle-aged Asian woman with short black hair, wearing a white blouse and glasses, smiling confidently"
+      class="w-full h-72 object-cover"
+      src="https://storage.googleapis.com/a1aa/image/986ce144-8566-47ed-3ec2-7bb9ebeaa88d.jpg"
+     />
+     <div class="p-8 text-center">
+      <h2 class="text-2xl font-bold text-blue-800 mb-1">Dr. Sophia Nguyen</h2>
+      <p class="text-blue-600 font-semibold mb-4 tracking-wide">
+       Data Science Instructor
+      </p>
+      <p class="text-gray-600 text-sm leading-relaxed">
+       PhD in Computer Science with 10+ years teaching experience in machine
+       learning and big data analytics.
+      </p>
+      <div class="mt-6 flex justify-center space-x-6 text-blue-600 text-xl">
+       <a
+        aria-label="Email Dr. Sophia Nguyen"
+        href="mailto:sophia.nguyen@example.com"
+        class="hover:text-blue-800 transition"
+        ><i class="fas fa-envelope"></i
+       ></a>
+       <a
+        aria-label="LinkedIn profile of Dr. Sophia Nguyen"
+        href="https://linkedin.com/in/sophia-nguyen"
+        target="_blank"
+        rel="noopener"
+        class="hover:text-blue-800 transition"
+        ><i class="fab fa-linkedin"></i
+       ></a>
+       <a
+        aria-label="Twitter profile of Dr. Sophia Nguyen"
+        href="https://twitter.com/sophia_nguyen"
+        target="_blank"
+        rel="noopener"
+        class="hover:text-blue-800 transition"
+        ><i class="fab fa-twitter"></i
+       ></a>
+      </div>
+     </div>
+    </article>
 
-            for (let i = 0; i < facultyBoxes.length; i++) {
-                let facultyName = facultyBoxes[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
-                if (facultyName.includes(input)) {
-                    facultyBoxes[i].style.display = '';
-                } else {
-                    facultyBoxes[i].style.display = 'none';
-                }
-            }
-        }
-    </script>
-</body>
+    <article
+     class="bg-white rounded-3xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl"
+    >
+     <img
+      alt="Portrait of Prof. James O'Connor, a middle-aged Caucasian man with short brown hair and beard, wearing a navy blue suit and light blue shirt, smiling warmly"
+      class="w-full h-72 object-cover"
+      src="https://storage.googleapis.com/a1aa/image/9c29558c-11e1-49b5-ebef-902de0a424c3.jpg"
+     />
+     <div class="p-8 text-center">
+      <h2 class="text-2xl font-bold text-blue-800 mb-1">Prof. James O'Connor</h2>
+      <p class="text-blue-600 font-semibold mb-4 tracking-wide">
+       Software Engineering Expert
+      </p>
+      <p class="text-gray-600 text-sm leading-relaxed">
+       Over 15 years of industry experience in software architecture and agile
+       methodologies.
+      </p>
+      <div class="mt-6 flex justify-center space-x-6 text-blue-600 text-xl">
+       <a
+        aria-label="Email Prof. James O'Connor"
+        href="mailto:james.oconnor@example.com"
+        class="hover:text-blue-800 transition"
+        ><i class="fas fa-envelope"></i
+       ></a>
+       <a
+        aria-label="LinkedIn profile of Prof. James O'Connor"
+        href="https://linkedin.com/in/james-oconnor"
+        target="_blank"
+        rel="noopener"
+        class="hover:text-blue-800 transition"
+        ><i class="fab fa-linkedin"></i
+       ></a>
+       <a
+        aria-label="Twitter profile of Prof. James O'Connor"
+        href="https://twitter.com/james_oconnor"
+        target="_blank"
+        rel="noopener"
+        class="hover:text-blue-800 transition"
+        ><i class="fab fa-twitter"></i
+       ></a>
+      </div>
+     </div>
+    </article>
+
+    <article
+     class="bg-white rounded-3xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl"
+    >
+     <img
+      alt="Portrait of Dr. Aisha Khan, a young South Asian woman with long black hair, wearing a green blouse and silver earrings, smiling gently"
+      class="w-full h-72 object-cover"
+      src="https://storage.googleapis.com/a1aa/image/8ce83b18-8c02-458c-8688-0a54f90d7b57.jpg"
+     />
+     <div class="p-8 text-center">
+      <h2 class="text-2xl font-bold text-blue-800 mb-1">Dr. Aisha Khan</h2>
+      <p class="text-blue-600 font-semibold mb-4 tracking-wide">
+       Cybersecurity Specialist
+      </p>
+      <p class="text-gray-600 text-sm leading-relaxed">
+       Expert in network security and ethical hacking with multiple
+       certifications and 8 years teaching experience.
+      </p>
+      <div class="mt-6 flex justify-center space-x-6 text-blue-600 text-xl">
+       <a
+        aria-label="Email Dr. Aisha Khan"
+        href="mailto:aisha.khan@example.com"
+        class="hover:text-blue-800 transition"
+        ><i class="fas fa-envelope"></i
+       ></a>
+       <a
+        aria-label="LinkedIn profile of Dr. Aisha Khan"
+        href="https://linkedin.com/in/aisha-khan"
+        target="_blank"
+        rel="noopener"
+        class="hover:text-blue-800 transition"
+        ><i class="fab fa-linkedin"></i
+       ></a>
+       <a
+        aria-label="Twitter profile of Dr. Aisha Khan"
+        href="https://twitter.com/aisha_khan"
+        target="_blank"
+        rel="noopener"
+        class="hover:text-blue-800 transition"
+        ><i class="fab fa-twitter"></i
+       ></a>
+      </div>
+     </div>
+    </article>
+   </section>
+
+   <section
+    class="grid grid-cols-1 sm:grid-cols-4 gap-10 max-w-7xl mx-auto"
+   >
+    <article
+     class="bg-white rounded-3xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl"
+    >
+     <img
+      alt="Portrait of Prof. Liam Martinez, a Hispanic man in his 40s with short dark hair and glasses, wearing a gray sweater and white shirt, smiling"
+      class="w-full h-64 object-cover"
+      src="https://storage.googleapis.com/a1aa/image/86242d6f-65e2-46e9-5617-1a9e0613dbe7.jpg"
+     />
+     <div class="p-6 text-center">
+      <h2 class="text-xl font-semibold text-blue-800 mb-1">
+       Prof. Liam Martinez
+      </h2>
+      <p class="text-blue-600 font-medium">Artificial Intelligence Researcher</p>
+     </div>
+    </article>
+
+    <article
+     class="bg-white rounded-3xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl"
+    >
+     <img
+      alt="Portrait of Dr. Emily Chen, a young East Asian woman with shoulder-length black hair, wearing a red blazer and white shirt, smiling brightly"
+      class="w-full h-64 object-cover"
+      src="https://storage.googleapis.com/a1aa/image/41b0920b-594a-4746-e81a-8ecd12d19aee.jpg"
+     />
+     <div class="p-6 text-center">
+      <h2 class="text-xl font-semibold text-blue-800 mb-1">Dr. Emily Chen</h2>
+      <p class="text-blue-600 font-medium">Cloud Computing Instructor</p>
+     </div>
+    </article>
+
+    <article
+     class="bg-white rounded-3xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl"
+    >
+     <img
+      alt="Portrait of Prof. David Smith, a middle-aged Black man with short curly hair and beard, wearing a dark green shirt, smiling confidently"
+      class="w-full h-64 object-cover"
+      src="https://storage.googleapis.com/a1aa/image/35a55ee6-110f-4df5-95c4-943a1b2dfb89.jpg"
+     />
+     <div class="p-6 text-center">
+      <h2 class="text-xl font-semibold text-blue-800 mb-1">Prof. David Smith</h2>
+      <p class="text-blue-600 font-medium">Mobile App Development Expert</p>
+     </div>
+    </article>
+
+    <article
+     class="bg-white rounded-3xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl"
+    >
+     <img
+      alt="Portrait of Dr. Maria Garcia, a Latina woman in her 30s with long dark brown hair, wearing a white blouse and pearl necklace, smiling warmly"
+      class="w-full h-64 object-cover"
+      src="https://storage.googleapis.com/a1aa/image/a6163a99-be34-4701-b410-7ef8a90640f0.jpg"
+     />
+     <div class="p-6 text-center">
+      <h2 class="text-xl font-semibold text-blue-800 mb-1">Dr. Maria Garcia</h2>
+      <p class="text-blue-600 font-medium">Digital Marketing Strategist</p>
+     </div>
+    </article>
+   </section>
+  </main>
+ </body>
 </html>
