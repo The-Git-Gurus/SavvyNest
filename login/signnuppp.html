@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Sphere</title>
+    <style>
+    body {
+        background-image: linear-gradient(to top right, white, rgb(197, 138, 27));
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .login {
+        width: 1000px;
+        height: 600px;
+        border: 0.5px solid black;
+        margin-top: 110px;
+        background-color: rgba(66, 62, 60, 0.75);
+        margin-left: 270px;
+    }
+    .login1 {
+        display: flex;
+        flex-direction: row;
+    }
+    #logo {
+        margin-left: 30px;
+        margin-top: 20px;
+        height: 100px;
+        width: 100px;
+    }
+    #name {
+        height: fit-content;
+        margin: 30px;
+        margin-left: 130px;
+        font-size: 60px;
+        color: rgb(198, 182, 92);
+    }
+    .login3 {
+        display: inline-flex;
+        flex-direction: row;
+        padding-left: 50px;
+        margin-top: 100px;
+        padding-inline: 70px;
+    }
+    .login4 {
+        margin-right: 100px;
+    }
+    #tagline {
+        color: rgb(198, 182, 92);
+        font-size: 35px;
+        box-shadow: 40px;
+        font-family: fantasy;
+        font-weight: 500;
+        font-size: 60px;
+    }
+    #loginform {
+        color: aliceblue;
+        text-align: center;
+        border: 4px solid;
+        width: 370px;
+        height: 280px;
+        padding-bottom: 30px;
+        box-shadow: 40px;
+        border-color: rgb(198, 182, 92);
+    }
+    a {
+        color: red;
+    }
+    </style>
+    <script>
+        function validateForm() {
+            var email = document.forms["signupForm"]["email"].value;
+            var password = document.forms["signupForm"]["password"].value;
+            var confirmPassword = document.forms["signupForm"]["confirmPassword"].value;
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            if (!/[A-Z]/.test(password)) {
+                alert("Password must contain at least one uppercase letter.");
+                return false;
+            }
+
+            if (!/[a-z]/.test(password)) {
+                alert("Password must contain at least one lowercase letter.");
+                return false;
+            }
+
+            if (!/[0-9]/.test(password)) {
+                alert("Password must contain at least one digit.");
+                return false;
+            }
+
+            if (!/[!@#$%^&*]/.test(password)) {
+                alert("Password must contain at least one special character (!@#$%^&*).");
+                return false;
+            }
+
+            alert("Your account has been created!");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <form name="signupForm" action="frontpage.html" onsubmit="return validateForm()">
+    <div class="login">
+        <div class="login1">
+            <div class="login2">
+                <img src="education.png" width="150px" height="150px" id="logo">
+            </div>
+            <div class="login2" id="name">LEARN SPHERE</div>
+        </div>
+        <div class="login3">
+            <div class="login4" id="tagline"><p>"Where Curiosity Sparks Innovation!"</p>
+        </div>
+        <div class="login5" id="loginform">
+            <h1>SIGN UP</h1><br><br>
+            <label for="email">Email ID</label>
+            <input type="email" name="email" id="email" placeholder="Enter Here"><br><br>
+            <label for="password">Create Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter Here"><br><br>
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Enter Here"><br><br>
+            <input type="submit" value="SIGN UP" id="login4">
+        </div>
+    </div>
+    </div>
+</form>
+</body>
+</html>
