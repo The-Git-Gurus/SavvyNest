@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background-image: url(https://vip-go.shutterstock.com/blog/wp-content/uploads/sites/5/2020/05/shutterstock_514474840.jpg?w=750);
+}
+
+header {
+  
+    color: rgb(235, 243, 6);
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 50px;
+    
+}
+
+h1 {
+    margin: 0;
+}
+
+.faculty-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.faculty-box {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    width: 200px;
+    gap: 40px;
+}
+
+.faculty-box img {
+    width: 200px;
+    height: auto;
+}
+
+.faculty-box h2 {
+    color: #333;
+    margin: 10px 0 5px;
+}
+
+.faculty-box p {
+    color: #777;
+    margin: 0 0 10px;
+}
+
+.faculty-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}

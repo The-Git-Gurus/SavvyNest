@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses Page</title>
+    <link rel="stylesheet" href="css/learningplatform1.css">
+</head>
+<body>
+    <header>
+        <h1>Available Courses</h1>
+        <input type="text" id="searchBar" placeholder="Search Courses..." onkeyup="searchCourses()">
+    </header>
+    <main>
+        <div class="course-container" id="courseContainer">
+            <div class="course-box" onclick="showDetails('course1')">
+                <h2>Web Development</h2>
+                <p>Learn how to build websites using HTML, CSS, and JavaScript.</p>
+                <h3>Price : 5800 INR </h3>
+                <button onclick="purchaseCourse('Web Development')">Purchase</button>
+                <button onclick="addToCart('Web Development', 5800)">Add to Cart</button>
+                <button onclick="showDetails('course1')">View Details</button>
+            </div>
+            <div class="course-box" onclick="showDetails('course2')">
+                <h2>Data Science</h2>
+                <p>Explore data analysis, machine learning, and statistics.</p>
+                <h3>Price : 5500 INR </h3>
+                <button onclick="purchaseCourse('Data Science')">Purchase</button>
+                <button onclick="addToCart('Data Science', 5500)">Add to Cart</button>
+                <button onclick="showDetails('course2')">View Details</button>
+            </div>
+            <div class="course-box" onclick="showDetails('course3')">
+                <h2>Graphic Design</h2>
+                <p>Create stunning visuals with design principles and tools.</p>
+                <h3>Price : 3500 INR </h3>
+                <button onclick="purchaseCourse('Graphic Design')">Purchase</button>
+                <button onclick="addToCart('Graphic Design', 3500)">Add to Cart</button>
+                <button onclick="showDetails('course3')">View Details</button>
+            </div>
+            <div class="course-box" onclick="showDetails('course4')">
+                <h2>Digital Marketing</h2>
+                <p>Master online marketing strategies and tools.</p>
+                <h3>Price : 5500 INR </h3>
+                <button onclick="purchaseCourse('Digital Marketing')">Purchase</button>
+                <button onclick="addToCart('Digital Marketing', 5500)">Add to Cart</button>
+                <button onclick="showDetails('course4')">View Details</button>
+            </div>
+            <div class="course-box" onclick="showDetails('course5')">
+                <h2>Python</h2>
+                <p>Start from the basics and go all the way to creating your own applications</p>
+                <h3>Price : 4600 INR </h3>
+                <button onclick="purchaseCourse('Python')">Purchase</button>
+                <button onclick="addToCart('Python', 4600)">Add to Cart</button>
+                <button onclick="showDetails('course5')">View Details</button>
+            </div>
+            <div class="course-box" onclick="showDetails('course6')">
+                <h2>Mobile Communication</h2>
+                <p> Wireless and Mobile Communications Introduction to mobile communication.</p>
+                <h3>Price : 1200 INR </h3>
+                <button onclick="purchaseCourse('Mobile Communication')">Purchase</button>
+                <button onclick="addToCart('Mobile Communication', 1200)">Add to Cart</button>
+                <button onclick="showDetails('course6')">View Details</button>
+            </div>
+            <div class="course-box" onclick="showDetails('course7')">
+                <h2>Computational Mathematics</h2>
+                <p>Master advance tools in mathematics</p>
+                <h3>Price : 3300 INR </h3>
+                <button onclick="purchaseCourse('Computational Mathematics')">Purchase</button>
+                <button onclick="addToCart('Computational Mathematics', 3300)">Add to Cart</button>
+                <button onclick="showDetails('course7')">View Details</button>
+            </div>
+            <div class="course-box" onclick="showDetails('course8')">
+                <h2>Artificial Intelligence</h2>
+                <p>Apply Today. Build Algorithms, Software Infrastructure and Data Pipelines.</p>
+                <h3>Price : 6500 INR </h3>
+                <button onclick="purchaseCourse('Artificial Intelligence')">Purchase</button>
+                <button onclick="addToCart('Artificial Intelligence', 6500)">Add to Cart</button>
+                <button onclick="showDetails('course8')">View Details</button>
+            </div>
+            <div class="course-box" onclick="showDetails('course9')">
+                <h2>DSA</h2>
+                <p>Master design skills with hands-on experience in System Design</p>
+                <h3>Price : 7300 INR </h3>
+                <button onclick="purchaseCourse('Data Structures & Algorithms')">Purchase</button>
+                <button onclick="addToCart('Data Structures & Algorithms', 7300)">Add to Cart</button>
+                <button onclick="showDetails('course9')">View Details</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let cart = [];
+
+        function purchaseCourse(courseName) {
+            alert('You have purchased the ' + courseName + ' course.');
+        }
+
+        function showDetails(courseId) {
+            // Add functionality to show course details here
+        }
+
+        function addToCart(courseName, price) {
+            cart.push({courseName, price});
+            alert(courseName + ' has been added to your cart.');
+        }
+
+        function searchCourses() {
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            let courseContainer = document.getElementById('courseContainer');
+            let courses = courseContainer.getElementsByClassName('course-box');
+
+            for (let i = 0; i < courses.length; i++) {
+                let courseTitle = courses[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+                if (courseTitle.includes(input)) {
+                    courses[i].style.display = '';
+                } else {
+                    courses[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

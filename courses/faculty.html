@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/faculty.css">
+    <title>Faculty Page</title>
+</head>
+<body>
+    <header>
+        <h1>Our Faculty</h1>
+        <input type="text" id="searchBar" placeholder="Search Faculty..." onkeyup="searchFaculty()">
+    </header>
+    <main>
+        <div class="faculty-container" id="facultyContainer">
+            <div class="faculty-box">
+                <img src="https://media.istockphoto.com/id/1349124672/photo/cheerful-young-businesswoman-wearing-in-ear-headphones-and-smiling-at-camera.jpg?s=612x612&w=0&k=20&c=gkyfrQA-oiClCtncrdCkAGIe5fexLiGqDD6fK7tagLM=" alt="Faculty Member">
+                <h2>Dr. Jenny</h2>
+                <p>Professor of Computer Science</p>
+            </div>
+            <div class="faculty-box">
+                <img src="https://media.istockphoto.com/id/1349124662/photo/young-businesswoman-wearing-in-ear-headphones-and-smiling-at-camera.jpg?s=612x612&w=0&k=20&c=t2QUWHyXgUH-kB7C7pfmiO-3myIAGHKQ1jWuuQphT-I=" alt="Faculty Member">
+                <h2>Dr. Romaina</h2>
+                <p>Professor of Computer Science</p>
+            </div>
+            <div class="faculty-box">
+                <img src="https://media.istockphoto.com/id/648013498/photo/beautiful-girl-posing-in-the-park.jpg?s=612x612&w=0&k=20&c=0aWKkBCSTwfrEiqTyKHXtTWAYSAsoRk0p66MWlzRBhU=" alt="Faculty Member">
+                <h2>Dr. Sukhpreet</h2>
+                <p>Professor of Computer Science</p>
+            </div>
+            <div class="faculty-box">
+                <img src="https://images.unsplash.com/photo-1621786037709-6c700b14ea75?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Faculty Member">
+                <h2>Dr. Jasmine Kaur</h2>
+                <p>Associate Professor of Python</p>
+            </div>
+            <div class="faculty-box">
+                <img src="https://media.istockphoto.com/id/2153383214/photo/portrait-of-business-in-elegant-suit-standing-over-white-background.jpg?s=612x612&w=0&k=20&c=fm_v5myz-xpiU54tzwFyipPPGfw1BL-1MbbBCt0ivdg=" alt="Faculty Member">
+                <h2>Dr. John Doe</h2>
+                <p>Professor of Computer Science</p>
+            </div>
+            <div class="faculty-box">
+                <img src="https://dmf76jm51vpov.cloudfront.net/upload/2023/260cb647-b4c8-4f0c-88db-c6ff50ef57a4.png" alt="Faculty Member">
+                <h2>Dr. Anushka</h2>
+                <p>Associate Professor of Mathematics</p>
+            </div>
+            <div class="faculty-box">
+                <img src="https://media.istockphoto.com/id/1827398164/photo/happy-young-man-smiling-looking-away-dreaming-resting-good-news-feel-satisfied-in-city-street.jpg?s=612x612&w=0&k=20&c=kUP4Gshno-Zuk9Efm8zkpIYP1Fd-EnQl7sBDiVDbNZw=" alt="Faculty Member">
+                <h2>Dr. Anil</h2>
+                <p>Lecturer in Physics</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function searchFaculty() {
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            let facultyContainer = document.getElementById('facultyContainer');
+            let facultyBoxes = facultyContainer.getElementsByClassName('faculty-box');
+
+            for (let i = 0; i < facultyBoxes.length; i++) {
+                let facultyName = facultyBoxes[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+                if (facultyName.includes(input)) {
+                    facultyBoxes[i].style.display = '';
+                } else {
+                    facultyBoxes[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

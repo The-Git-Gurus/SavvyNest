@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/features.css">
+    <title>FEATURES</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    
+</head>
+<body>
+    <!-- symbol -->
+    <div class="symbol">
+        <img src="images/education.png" alt="education" class="img">
+        <h1>LearnSphere</h1>
+       </div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+    <a href="index.html" target="_top" class="a">Home</a>
+<a href="courses/features.html" target="_top" class="a">Features</a>
+<a href="learning/learningplatform1234.html" target="_top" class="a">Courses</a>
+<a href="courses/faculty.html" target="_top" class="a">Faculty</a>
+<a href="login/loginnnn.html" target="_top" class="a">LogIn</a>
+<a href="about/aboutus.html" target="_top" class="a">AboutUs</a>
+<a href="signnuppp.html" target="_top" class="a1"> SignUp</a>
+    </div>
+
+    <!-- heading -->
+    <h1 class="heading">Awesome Features</h1>
+    <h6 class="line">Learn at your own pace with flexible scheduling—education on your terms!</h6>
+
+    <!-- features -->
+     
+    <div class="features">
+        <a href="#img1" class="anchor1">
+        <div class="feature1">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h2>Scholarship Facility</h2>
+        <p>Quality education should be accessible to everyone.</p>
+        </div>
+        </a>
+
+        <div class="lightbox" id="img1">
+            <a href="#" class="close">&times;</a>
+            <div class="lightboxcontent">
+                <img src="schlolarship.jpg">
+            </div>
+        </div>
+        
+        <a href="learning/learningplatform1234.html" class="anchor2">
+        <div class="feature2">
+            <i class="fa-solid fa-laptop-code"></i>
+        <h2>Online Courses</h2>
+        <p>Discover a world of learning with our diverse range of online courses at LearnSphere!</p>
+        </div>
+        </a>
+
+        <a href="#img3" class="anchor3">
+        <div class="feature3">
+            <i class="fa-solid fa-award"></i>
+        <h2>Global Certification</h2>
+        <p>Globally recognized certifications that empower you to stand out in today's competitive job market.</p>
+        </div>
+    </a>
+
+        <div class="lightbox" id="img3">
+            <a href="#" class="close">&times;</a>
+            <div class="lightboxcontent"> 
+                <img src="certificate.webp" alt="img3">
+            </div>
+        </div>
+        </div>
+    
+    <section>
+        <div class="trending">
+            <div class="now">Trending Now!!</div>
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide"><img src="webdev.jpg"></div>
+                    <div class="slide"><img src="datas.jpg"></div>
+                    <div class="slide"><img src="ari.avif"></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const slides=document.querySelectorAll('.slide');
+            let currentindex=0;
+            function show_slide(index){
+                const offset=-index*100;
+                document.querySelector('.slides').style.transform=`translateX(${offset}%)`;
+            }
+            function next_slide(){
+                currentindex=(currentindex+1)%slides.length;
+                show_slide(currentindex);
+            }
+            next_slide();
+            setInterval(next_slide,1000)
+        </script>
+    </section>
+
+        
+</body>
+</html>

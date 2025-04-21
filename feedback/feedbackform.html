@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(238, 238, 63);
+    background-position: center;
+}
+
+.form{
+    width: 420px;
+    background:rgba(0, 0, 0, 0.75);
+    color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+
+}
+
+.form h1{
+    text-align: center;
+    font-size: 36px;
+}
+
+.input-box{
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    position: relative;
+}
+
+.input-box input, .input-box textarea{
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    padding: 20px 45px 20px 20px;
+    font-size: 20px;
+    color: beige;
+}
+
+.input-box input::placeholder, .input-box textarea::placeholder {
+    color: white;
+}
+
+.input-box i {
+   position: absolute;
+   right: 20px;
+   top: 15px;
+   font-size: 20px;  
+}
+
+textarea{
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 18px;
+    color: beige;
+}
+
+.btn{
+    width: 100%;
+    height: 45px;
+    background:orange;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+#feedbackContainer {
+    margin-top: 20px;
+}
+
+.feedback-item {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <p><a href="main.html" style="text-decoration: none; color: white;"></a> </p>
+        </div>   
+    </nav>
+    <div class="form">
+        <form id="feedbackForm">
+            <h1>Feedback Form</h1>
+            <div class="input-box">
+                <input type="text" id="username" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="email" id="email" placeholder="Email" required>
+                <i class='bx bx-envelope'></i>
+            </div>
+            <div class="input-box">
+                <textarea id="feedback" placeholder="&nbsp;&nbsp;Type here..." required style="height: 80px; width: 340px;"></textarea>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        <div id="feedbackContainer">
+            <!-- Feedback will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const feedback = document.getElementById('feedback').value;
+
+            // Create feedback item
+            const feedbackItem = document.createElement('div');
+            feedbackItem.classList.add('feedback-item');
+            feedbackItem.innerHTML = `
+                <p><strong>Username:</strong> ${username}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Feedback:</strong> ${feedback}</p>
+            `;
+
+            // Append feedback item to feedback container
+            document.getElementById('feedbackContainer').appendChild(feedbackItem);
+
+            // Clear form
+            document.getElementById('feedbackForm').reset();
+        });
+    </script>
+</body>
+</html>
