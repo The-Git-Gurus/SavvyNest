@@ -1,148 +1,130 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <style>
-        
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: yellow;
-}
-
-.container {
-    width: 80%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-
-h1, h2, h3 {
-    color: #444;
-}
-
-.header {
-    background: #f4f4f4;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-.header p {
-    font-size: 1.2em;
-    color: #666;
-}
-
-.about-section {
-    padding: 40px 0;
-    background: #ffffff;
-}
-
-.about-section ul {
-    list-style: disc;
-    margin-left: 20px;
-    padding-left: 10px;
-}
-
-
-.team-section {
-    background: #f9f9f9;
-    padding: 40px 0;
-}
-
-.team {
-    display: flex;
-    gap: 20px;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.team-member {
-    text-align: center;
-    background: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-}
-.footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-}
-
-.footer p {
-    margin: 0;
-    font-size: 0.9em;
-}
-    </style>
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <h1>About Us</h1>
-            <p>Get to know who we are and what we stand for.</p>
-        </div>
-    </header>
-
-    <section class="about-section">
-        <div class="container">
-            <h2>Our Mission</h2>
-            <p>We aim to provide innovative solutions to solve real-world challenges and create lasting impact.</p>
-
-            <h2>Our Values</h2>
-            <ul>
-                <li>Integrity: Acting with honesty and transparency.</li>
-                <li>Excellence: Striving for perfection in everything we do.</li>
-                <li>Innovation: Embracing creativity and change.</li>
-                <li>Teamwork: Collaborating to achieve shared goals.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="team-section">
-        <div class="container">
-            <h2>Our Team</h2>
-            <p>We are a group of passionate professionals dedicated to driving success and innovation.</p>
-
-            <div class="team">
-                <div class="team-member">
-                    <h3>Shubhneet Garg</h3>
-                    <p>Teammate </p>
-                </div>
-                <div class="team-member">
-                    <h3>Sandeep Singh Sidhu</h3>
-                    <p>Teammate</p>
-                </div>
-                <div class="team-member">
-                    <h3>Priyanshu</h3>
-                    <p>Teammate</p>
-                </div>
-                <div class="team-member">
-                    <h3>Shubham Thakur</h3>
-                    <p>Teammate</p>
-                </div>
-                <div class="team-member">
-                    <h3>Shubham Sharma</h3>
-                    <p>Teammate</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 LearnSphere. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   About Us - Savvy Nest
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Inter', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: yellow;
+        }
+  </style>
+ </head>
+ <body class="relative min-h-screen bg-yellow-400">
+  <!-- Background image using img tag -->
+  <img alt="Background image showing diverse students studying together with books and laptops in a bright modern classroom" aria-hidden="true" class="pointer-events-none fixed inset-0 w-full h-full object-cover opacity-10 -z-10" height="1080" src="https://storage.googleapis.com/a1aa/image/21fa66f7-85b1-411d-d7c6-97df3f36619d.jpg" width="1920"/>
+  <header class="bg-gray-100 bg-opacity-90 py-8 shadow-md">
+   <div class="container mx-auto px-6 max-w-7xl text-center">
+    <h1 class="text-4xl font-semibold text-gray-800 mb-2">
+     About Us - Savvy Nest
+    </h1>
+    <p class="text-lg text-gray-600">
+     Get to know who we are and what we stand for.
+    </p>
+   </div>
+  </header>
+  <main class="container mx-auto max-w-7xl px-6 py-12 space-y-16">
+   <section class="bg-white bg-opacity-90 rounded-lg p-10 shadow-lg">
+    <h2 class="text-3xl font-semibold text-gray-800 mb-6">
+     Our Mission
+    </h2>
+    <p class="text-gray-700 text-lg leading-relaxed mb-8">
+     We aim to provide innovative solutions to solve real-world challenges and create lasting impact.
+    </p>
+    <h2 class="text-3xl font-semibold text-gray-800 mb-6">
+     Our Values
+    </h2>
+    <ul class="list-disc list-inside text-gray-700 space-y-2 text-lg max-w-xl">
+     <li>
+      <strong>
+       Integrity:
+      </strong>
+      Acting with honesty and transparency.
+     </li>
+     <li>
+      <strong>
+       Excellence:
+      </strong>
+      Striving for perfection in everything we do.
+     </li>
+     <li>
+      <strong>
+       Innovation:
+      </strong>
+      Embracing creativity and change.
+     </li>
+     <li>
+      <strong>
+       Teamwork:
+      </strong>
+      Collaborating to achieve shared goals.
+     </li>
+    </ul>
+   </section>
+   <section class="bg-gray-100 bg-opacity-90 rounded-lg p-10 shadow-lg">
+    <h2 class="text-3xl font-semibold text-gray-800 mb-6">
+     Our Team
+    </h2>
+    <p class="text-gray-700 text-lg mb-10 max-w-3xl">
+     We are a group of passionate professionals dedicated to driving success and innovation.
+    </p>
+    <div class="flex flex-wrap justify-center gap-8">
+     <div class="team-member bg-white rounded-lg p-6 shadow-md w-56 text-center">
+      <h3 class="text-xl font-semibold text-gray-800">
+       Shubhneet Garg
+      </h3>
+      <p class="text-gray-600">
+       Teammate
+      </p>
+     </div>
+     <div class="team-member bg-white rounded-lg p-6 shadow-md w-56 text-center">
+      <h3 class="text-xl font-semibold text-gray-800">
+       Sandeep Singh Sidhu
+      </h3>
+      <p class="text-gray-600">
+       Teammate
+      </p>
+     </div>
+     <div class="team-member bg-white rounded-lg p-6 shadow-md w-56 text-center">
+      <h3 class="text-xl font-semibold text-gray-800">
+       Priyanshu
+      </h3>
+      <p class="text-gray-600">
+       Teammate
+      </p>
+     </div>
+     <div class="team-member bg-white rounded-lg p-6 shadow-md w-56 text-center">
+      <h3 class="text-xl font-semibold text-gray-800">
+       Shubham Thakur
+      </h3>
+      <p class="text-gray-600">
+       Teammate
+      </p>
+     </div>
+     <div class="team-member bg-white rounded-lg p-6 shadow-md w-56 text-center">
+      <h3 class="text-xl font-semibold text-gray-800">
+       Shubham Sharma
+      </h3>
+      <p class="text-gray-600">
+       Teammate
+      </p>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="bg-gray-900 text-white text-center py-6 mt-16">
+   <p class="text-sm">
+    © 2025 Savvy Nest. All rights reserved.
+   </p>
+  </footer>
+ </body>
 </html>
