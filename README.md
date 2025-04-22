@@ -57,8 +57,7 @@ Please read our [CONTRIBUTING.md] for details on how to get started.
 
 ## 📸 Screenshots
 
-> (images/homepage.png)
-
+![Screenshot](images/homepage.png)
 
 ## 👥 Team
 
