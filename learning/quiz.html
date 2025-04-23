@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+       background-image: url(https://wallpaperaccess.com/full/2121414.jpg);
+        }
+       .container {
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 20px;
+       }
+       h1, h2, h3 {
+        text-align: center;
+        color: #faf6f6;
+        background-color: black;
+        margin-bottom: 50px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+         .question {
+              margin-bottom: 20px;
+          }
+          .question h3 {
+              margin: 0 0 10px;
+              color: #c4c1f6;
+          }
+          .result {
+              margin-top: 20px;
+              text-align: center;
+              color: #fff;
+          }
+          .quiz-container {
+              background-color: white;
+              padding: 20px;
+              border-radius: 10px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              width: 500px;
+              margin-left:30%
+          
+              
+            }
+            
+          
+            
+            .question {
+              margin-bottom: 20px;
+            }
+            
+            button {
+              display: block;
+              width: 100%;
+              padding: 10px;
+              background-color: #4CAF50;
+              color: white;
+              border: none;
+              border-radius: 5px;
+              font-size: 16px;
+              cursor: pointer;
+            }
+            
+            button:hover {
+              background-color: #45a049;
+            }
+            
+            #result {
+              display: none;
+              text-align: center;
+              margin-top: 20px;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="quiz-container">
+        <h1>Quiz - Test Your Knowledge!</h1>
+        <form id="quiz-form">
+          <div class="question">
+            <p>1.There are ___ levels of heading in HTML</p>
+            <input type="radio" name="q1" value="a"> a) 1<br>
+            <input type="radio" name="q1" value="b"> b) 2<br>
+            <input type="radio" name="q1" value="c"> c) 3<br>
+            <input type="radio" name="q1" value="d"> d) 4<br>
+          </div>
+          
+          <div class="question">
+            <p>2. Various INPUT types are</p>
+            <input type="radio" name="q2" value="a"> a) CHECKBOX, RADIO<br>
+            <input type="radio" name="q2" value="b"> b) CHECKBOX, HIDDEN<br>
+            <input type="radio" name="q2" value="c"> c) CHECKBOX, RADIO, HIDDEN<br>
+            <input type="radio" name="q2" value="d"> d) None of these<br>
+          </div>
+          
+          <div class="question">
+            <p>3. The purpose of markup is to</p>
+            <input type="radio" name="q3" value="a"> a) Add hypertext capabilities<br>
+            <input type="radio" name="q3" value="b"> b) Enhance the document<br>
+            <input type="radio" name="q3" value="c"> c) both a and b<br>
+            <input type="radio" name="q3" value="d"> d) None of the above<br>
+          </div>
+    
+          <div class="question">
+            <p>4. The table element’s __________ attribute is valid when using html5 syntax.</p>
+            <input type="radio" name="q4" value="a"> a) Border<br>
+            <input type="radio" name="q4" value="b"> b) Cellspacing<br>
+            <input type="radio" name="q4" value="c"> c) Cellpadding<br>
+            <input type="radio" name="q4" value="d"> d) Summary<br>
+          </div>
+          
+          <div class="question">
+            <p>5. Use the ________ element to associate javascript with a web page.</p>
+            <input type="radio" name="q5" value="a"> a) Iframe<br>
+            <input type="radio" name="q5" value="b"> b) Controls<br>
+            <input type="radio" name="q5" value="c"> c) Poster<br>
+            <input type="radio" name="q5" value="d"> d) Script<br>
+          </div>
+    
+          <div class="question">
+            <p>6. Web pages are viewed using a web ____.</p>
+            <input type="radio" name="q6" value="a"> a)  Browser<br>
+            <input type="radio" name="q6" value="b"> b) Clients<br>
+            <input type="radio" name="q6" value="c"> c) Jypter<br>
+            <input type="radio" name="q6" value="d"> d) Protocol<br>
+          </div>
+    
+          <div class="question">
+            <p>7. Use the ________________ property to configure rounded corners with css.</p>
+            <input type="radio" name="q7" value="a"> a) Border-round.<br>
+            <input type="radio" name="q7" value="b"> b) Border-radius.<br>
+            <input type="radio" name="q7" value="c"> c) Box-shadow.<br>
+            <input type="radio" name="q7" value="d"> d) Background<br>
+          </div>
+    
+          <div class="question">
+            <p>8. Use the ________________ property to confine the display of the background image.</p>
+            <input type="radio" name="q8" value="a"> a) Background-image<br>
+            <input type="radio" name="q8" value="b"> b) Background-clip<br>
+            <input type="radio" name="q8" value="c"> c) Background-origin<br>
+            <input type="radio" name="q8" value="d"> d) Background-size<br>
+          </div>
+    
+          <div class="question">
+            <p>9. Use the ___________________ property to resize or scale the background image.</p>
+            <input type="radio" name="q9" value="a"> a) Background-size<br>
+            <input type="radio" name="q9" value="b"> b) Background-clip<br>
+            <input type="radio" name="q9" value="c"> c) Background-origin<br>
+            <input type="radio" name="q9" value="d"> d) Background-image<br>
+          </div>
+    
+          <div class="question">
+            <p>10. A layout for a mobile device is typically based on a _____ grid.</p>
+            <input type="radio" name="q10" value="a"> a) 6-column<br>
+            <input type="radio" name="q10" value="b"> b)  1-column<br>
+            <input type="radio" name="q10" value="c"> c)  3-column<br>
+            <input type="radio" name="q10" value="d"> d)  8-column<br>
+          </div>
+    
+          <button type="button" onclick="submitQuiz()">Submit</button>
+        </form>
+    
+        <div id="result">
+          <h2>Your score is: <span id="score">0</span> / 10</h2>
+        </div>
+      </div>
+      </div>
+
+
+      <script>
+
+        function submitQuiz() {
+            const correctAnswers = {
+              q1: "d",
+              q2: "c",
+              q3: "c",
+              q4: "b",
+              q5: "d",
+              q6: "a",
+              q7: "b",
+              q8: "b",
+              q9: "a",
+              q10: "b"
+            };
+          
+            let score = 0;
+          
+            // Get all answers from the form
+            const form = document.getElementById('quiz-form');
+            const formData = new FormData(form);
+          
+            // Loop through each question and check if the answer is correct
+            for (let [question, answer] of formData.entries()) {
+              if (correctAnswers[question] === answer) {
+                score++;
+              }
+            }
+          
+            // Display the score
+            document.getElementById('score').textContent = score;
+            document.getElementById('result').style.display = 'block';
+          }
+
+        </script>
+</body>
+</html>
