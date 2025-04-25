@@ -84,18 +84,6 @@
             </div>
         </div>
         <script>
-            const slides=document.querySelectorAll('.slide');
-            let currentindex=0;
-            function show_slide(index){
-                const offset=-index*100;
-                document.querySelector('.slides').style.transform=`translateX(${offset}%)`;
-            }
-            function next_slide(){
-                currentindex=(currentindex+1)%slides.length;
-                show_slide(currentindex);
-            }
-            next_slide();
-            setInterval(next_slide,1000)
         </script>
     </section>
 
