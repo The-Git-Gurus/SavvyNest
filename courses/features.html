@@ -84,18 +84,25 @@
             </div>
         </div>
         <script>
-            const slides=document.querySelectorAll('.slide');
-            let currentindex=0;
-            function show_slide(index){
-                const offset=-index*100;
-                document.querySelector('.slides').style.transform=`translateX(${offset}%)`;
+            function addToCart(courseName, price) {
+            cart.push({courseName, price});
+            alert(courseName + ' has been added to your cart.');
+        }
+
+        function searchCourses() {
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            let courseContainer = document.getElementById('courseContainer');
+            let courses = courseContainer.getElementsByClassName('course-box');
+
+            for (let i = 0; i < courses.length; i++) {
+                let courseTitle = courses[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+                if (courseTitle.includes(input)) {
+                    courses[i].style.display = '';
+                } else {
+                    courses[i].style.display = 'none';
+                }
             }
-            function next_slide(){
-                currentindex=(currentindex+1)%slides.length;
-                show_slide(currentindex);
-            }
-            next_slide();
-            setInterval(next_slide,1000)
+        }
         </script>
     </section>
 
