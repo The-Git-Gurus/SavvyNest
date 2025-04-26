@@ -4,95 +4,272 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Savvy Nest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-    body{
-        background-image: linear-gradient(to top right,white,rgb(197, 138, 27));;
-    background-repeat: no-repeat;
-    background-size: cover;background-position: center;}
-        .login{ width: 1000px;height: 600px;border: 0.5px solid black;margin-top: 110px;
-            background-color: rgba(66, 62, 60, 0.75) ;margin-left: 270px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
-        .login1
-    {
-        display: flex;
-        flex-direction: row;
-    }
-    #logo{margin-left: 30px;
-        margin-top: 20px;
-        height:100px;
-        width:100px
-        /* border: 3px solid rgb(198, 182, 92);border-radius: 50%; */
-    }
-    #name{height: fit-content;margin: 30px;margin-left: 130px;
-        font-size: 60px;color: rgb(198, 182, 92); 
-    }
-    .login3{display: inline-flex;flex-direction: row;
-       
-        padding-left: 50px;
-        margin-top: 100px;
-        padding-inline: 70px;
-        
-    }
-    .login4{
-    margin-right:100px;
-    }
-    #tagline{color:rgb(198, 182, 92);
-        font-size: 35px;
-       box-shadow: 40px;
-       font-family: fantasy;
-       font-weight: 500;
-       font-size: 60px;
-       
-    }
-    #loginform{color:aliceblue;
-        text-align: center;
-        border: 4px solid ;
-        ;width:370px;height: 280px;padding-bottom: 30px;box-shadow: 40px;border-color: rgb(198, 182, 92);;
-        p{ font-size: 15px; }
 
-        
-    }
-    #loginform{color:aliceblue;
-        text-align: center;
-        border: 4px solid ;
-        ;width:370px;height: 280px;padding-bottom: 30px;box-shadow: 40px;border-color: rgb(198, 182, 92);;
-        p{ font-size: 15px; }
+        body {
+            background: linear-gradient(45deg, #4ecdc4, #ff6b6b);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-        
-    }
-    a{
-        color: red;
-    }
-    
-    
+        .bg-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(255,255,255,0.05) 0px,
+                rgba(255,255,255,0.05) 20px,
+                transparent 20px,
+                transparent 40px
+            );
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 1000px;
+            padding: 40px;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .login-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        #logo {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        #name {
+            font-size: 2.5em;
+            color: #1e3c72;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .content {
+            display: flex;
+            gap: 40px;
+        }
+
+        .tagline {
+            flex: 1;
+            color: #1e3c72;
+            font-size: 2em;
+            line-height: 1.4;
+            padding-right: 40px;
+            border-right: 2px solid rgba(30,60,114,0.1);
+        }
+
+        .login-form {
+            flex: 1;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1e3c72;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #1e3c72;
+            box-shadow: 0 0 10px rgba(30,60,114,0.2);
+        }
+
+        .login-btn {
+            background: linear-gradient(45deg, #4ecdc4, #ff6b6b);
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30,60,114,0.3);
+        }
+
+        .links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .links a {
+            color: #1e3c72;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #2a5298;
+            text-decoration: underline;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            .tagline {
+                border-right: none;
+                border-bottom: 2px solid rgba(30,60,114,0.1);
+                padding-bottom: 30px;
+                padding-right: 0;
+            }
+        }
     </style>
 </head>
-
 <body>
-    <form action="../index.html">
-    <div class="login">
-        <div class="login1">
-            <div class="login2">
-                <img src="../images/education.png"  width="150px" height="150px"id="logo">
+    <div class="bg-pattern"></div>
+    <div class="login-container">
+        <div class="header">
+            <img src="../images/education.png" id="logo" alt="Savvy Nest Logo">
+            <h1 id="name">Savvy Nest</h1>
+        </div>
+        <div class="content">
+            <div class="tagline">
+                "Where Curiosity Sparks Innovation!"
             </div>
-            <div class="login2" id="name">Savvy Nest</div>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="login-btn">Sign In</button>
+                <div class="links">
+                    <a href="signnuppp.html">Create Account</a> • 
+                    <a href="#">Forgot Password?</a>
+                </div>
+            </form>
         </div>
-        <div class="login3">
-            <div class="login4" id="tagline"><p>"Where Curiosity Sparks Innovation!"</p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-        </div>
-        <div class="login5" id="loginform">
-            <h1>LOGIN</h1><br><br>
-            <label for="email">Email ID</label>
-            <input type="email" name="email" id="email id" placeholder="Enter Here"><br><br>
-            <label for="password">Password</label><input type="password" name="password" id="password" placeholder="Enter Here"><br><br>
-           <a href="../index.html"><input type="button" value="LOGIN" id="login4"></a>
-           <p>Don't have an account? <a href="signnuppp.html"><b>sign up</b></a></p>
-        </div>
-    </div>
-    </div>
-</form>
-    
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple validation
+            if (!validateEmail(email)) {
+                showError('Please enter a valid email address');
+                return;
+            }
+            
+            if (password.length < 8) {
+                showError('Password must be at least 8 characters');
+                return;
+            }
+            
+            // Simulate API call
+            showLoading();
+            setTimeout(() => {
+                window.location.href = '../index.html';
+            }, 1500);
+        });
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.style.color = '#ff4444';
+            errorDiv.style.marginBottom = '15px';
+            errorDiv.textContent = message;
+            
+            const form = document.getElementById('loginForm');
+            if (form.querySelector('.error-message')) {
+                form.removeChild(form.querySelector('.error-message'));
+            }
+            form.insertBefore(errorDiv, form.firstChild);
+        }
+
+        function showLoading() {
+            const btn = document.querySelector('.login-btn');
+            btn.innerHTML = '<div class="loader"></div>';
+            btn.style.cursor = 'not-allowed';
+            btn.disabled = true;
+        }
+
+        // Add ripple effect to button
+        document.querySelector('.login-btn').addEventListener('click', function(e) {
+            let ripple = document.createElement('div');
+            ripple.style.position = 'absolute';
+            ripple.style.width = '20px';
+            ripple.style.height = '20px';
+            ripple.style.background = 'rgba(255,255,255,0.5)';
+            ripple.style.borderRadius = '50%';
+            ripple.style.transform = 'translate(-50%, -50%)';
+            ripple.style.pointerEvents = 'none';
+            ripple.style.left = e.clientX - this.offsetLeft + 'px';
+            ripple.style.top = e.clientY - this.offsetTop + 'px';
+            this.appendChild(ripple);
+            
+            setTimeout(() => ripple.remove(), 500);
+        });
+    </script>
 </body>
 </html>
-    
