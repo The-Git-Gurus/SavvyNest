@@ -2,11 +2,11 @@
 
 Welcome to **Savvy Nest** — a modern learning platform designed to empower learners with intuitive navigation, clean design, and interactive content.
 
-![Savvy Nest Banner](images/banner.png)
-
 ## 🌐 Live Demo
 
-> Coming soon — stay tuned!
+>Check it out live 👉[Savvy Nest](https://the-git-gurus.github.io/SavvyNest/) 
+
+![Savvy Nest Banner](images/banner.png)
 
 ## 🚀 Features
 
@@ -37,27 +37,14 @@ SavvyNest/
 ├── index.html       # Main landing page
 └── README.md        # Project overview
 
+## 📸 Screenshots
 
-## 🧑‍💻 Getting Started
-
-To get a local copy up and running:
-
-```bash
-git clone https://github.com/The-Git-Gurus/SavvyNest.git
-cd SavvyNest
-Then open index.html in your browser.
-
-Then open `index.html` in your browser.
-
+![Screenshot](images/homepage.png)
 
 ## 🤝 Contributing
 
 We welcome contributions!  
-Please read our [CONTRIBUTING.md] for details on how to get started.
-
-## 📸 Screenshots
-
-![Screenshot](images/homepage.png)
+Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get started.
 
 ## 👥 Team
 
