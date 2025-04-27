@@ -2,6 +2,20 @@
 
 Welcome to *Savvy Nest* — a modern learning platform designed to empower learners with intuitive navigation, clean design, and interactive content.
 
+---
+
+## 📖 Table of Contents
+- [🌐 Live Demo](#-live-demo)
+- [🚀 Features](#-features)
+- [🛠 Tech Stack](#-tech-stack)
+- [📂 Folder Structure](#-folder-structure)
+- [📸 Screenshots](#-screenshots)
+- [🤝 Contributing](#-contributing)
+- [👥 Team](#-team)
+- [📄 License](#-license)
+
+---
+
 ## 🌐 Live Demo
 
 >Check it out live 👉[Savvy Nest](https://the-git-gurus.github.io/SavvyNest/) 
@@ -46,6 +60,25 @@ SavvyNest/
 We welcome contributions!  
 Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get started.
 
+---
+
 ## 👥 Team
 
-Developed with ❤ by [The Git Gurus](https://github.com/The-Git-Gurus)
+| Name                      | GitHub                                         |
+|---------------------------|------------------------------------------------|
+| Shubhneet Garg            | [@shubhneet-garg](https://github.com/shubhneet-garg) |
+| Priyanshu                 | [@priyanshu1485](https://github.com/priyanshu1485) |
+| Shubham Thakur            | [@ShubhamThakur7651](https://github.com/ShubhamThakur7651) |
+| Shubham Sharma            | [@shubhamsharma1532](https://github.com/shubhamsharma1532) |
+| Sandeep Singh Sidhu       | [@sandeepsingh-sidhu](https://github.com/sandeepsingh-sidhu) |
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+
+---
+
+✨ **Made with love ❤️ by [The Git Gurus](https://github.com/The-Git-Gurus) ✨**
+
