@@ -257,3 +257,50 @@ input:checked ~ form{
     display:block
 }
 
+form header{
+    width:100%;
+    font-size:25px;
+    color:orange;
+    font-weight:500;
+    margin:5px 0 5px 0;
+    text-align: center;
+    transition:all 0.2s ease;
+}
+
+form .textarea{
+    height:100px;
+    width:100%;
+    overflow:hidden
+}
+form .textarea textarea{
+    height:100%;
+    width:100%;
+    outline:none;
+    border:1px solid #333;
+    color:#eee;
+    background:#222;
+    padding:10px;
+    font-size:17px;
+    resize:none
+}
+form.btn{
+    height:45px;
+    width:100%;
+    margin:15px 0;
+}
+form .btn button{
+    height:100%;
+    width:100%;
+    border:1px solid #444;
+    outline:none;
+    background: #222;
+    color:#999;
+    font-size:25px;
+    cursor:pointer;
+    margin-top: 20px;
+    padding: 10px;
+    transition:all 0.3s ease;
+}
+form .btn button:hover{
+    background:#1b1b1b
+}
