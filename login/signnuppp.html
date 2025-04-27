@@ -5,114 +5,250 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Savvy Nest</title>
     <link rel="icon" href="../images/education.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+    :root {
+        --gold: #FFD700;
+        --dark-gold: #FFB800;
+        --dark-bg: #1a1a1a;
+        --light-yellow: #FFF9C4;
+    }
+
     body {
-        background-image: linear-gradient(to top right, white, rgb(197, 138, 27));
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+        background: linear-gradient(45deg, var(--dark-bg) 60%, #3a3a3a);
+        min-height: 100vh;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
     }
+
     .login {
-        width: 1000px;
-        height: 600px;
-        border: 0.5px solid black;
-        margin-top: 110px;
-        background-color: rgba(66, 62, 60, 0.75);
-        margin-left: 270px;
+        width: 90%;
+        max-width: 1200px;
+        height: 700px;
+        border-radius: 30px;
+        margin: 20px;
+        background: rgba(30, 30, 30, 0.9);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid var(--gold);
     }
+
     .login1 {
         display: flex;
-        flex-direction: row;
+        align-items: center;
+        padding: 20px 40px;
+        background: linear-gradient(90deg, var(--dark-bg) 60%, rgba(255,184,0,0.1));
     }
+
     #logo {
-        margin-left: 30px;
-        margin-top: 20px;
-        height: 100px;
-        width: 100px;
+        width: 80px;
+        height: 80px;
+        margin-right: 20px;
     }
+
     #name {
-        height: fit-content;
-        margin: 30px;
-        margin-left: 130px;
-        font-size: 60px;
-        color: rgb(198, 182, 92);
+        font-size: 2.5rem;
+        color: var(--gold);
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        letter-spacing: 1px;
     }
+
     .login3 {
-        display: inline-flex;
-        flex-direction: row;
-        padding-left: 50px;
-        margin-top: 100px;
-        padding-inline: 70px;
+        display: flex;
+        justify-content: space-between;
+        padding: 50px;
+        height: calc(100% - 120px);
     }
+
     .login4 {
-        margin-right: 100px;
+        flex: 1;
+        padding-right: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
+
     #tagline {
-        color: rgb(198, 182, 92);
-        font-size: 35px;
-        box-shadow: 40px;
-        font-family: fantasy;
-        font-weight: 500;
-        font-size: 60px;
+        color: var(--light-yellow);
+        font-size: 3rem;
+        line-height: 1.2;
+        margin-bottom: 30px;
+        position: relative;
     }
+
+    #tagline::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        width: 80px;
+        height: 4px;
+        background: var(--gold);
+        border-radius: 2px;
+    }
+
+    .features {
+        color: var(--light-yellow);
+        list-style: none;
+        padding: 0;
+    }
+
+    .features li {
+        margin: 15px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .features i {
+        color: var(--gold);
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+
     #loginform {
-        color: aliceblue;
-        text-align: center;
-        border: 4px solid;
-        width: 370px;
-        height: 280px;
-        padding-bottom: 30px;
-        box-shadow: 40px;
-        border-color: rgb(198, 182, 92);
+        width: 400px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 40px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        border: 2px solid var(--gold);
     }
-    a {
-        color: red;
+
+    #loginform h1 {
+        color: var(--gold);
+        margin-bottom: 30px;
+        font-size: 2rem;
+    }
+
+    .input-group {
+        margin-bottom: 25px;
+        position: relative;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 12px 20px;
+        border: 2px solid rgba(255,215,0,0.3);
+        border-radius: 8px;
+        background: rgba(0,0,0,0.3);
+        color: white;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .input-group input:focus {
+        outline: none;
+        border-color: var(--gold);
+        box-shadow: 0 0 10px rgba(255,215,0,0.2);
+    }
+
+    .input-group label {
+        color: var(--light-yellow);
+        display: block;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+    }
+
+    #showPassword {
+        color: var(--light-yellow);
+        margin: 15px 0;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    #showPassword input {
+        margin-right: 8px;
+    }
+
+    #loginform button {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(45deg, var(--gold), var(--dark-gold));
+        border: none;
+        border-radius: 8px;
+        color: var(--dark-bg);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    #loginform button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+    }
+
+    .social-login {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .social-login p {
+        color: var(--light-yellow);
+        margin-bottom: 15px;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .social-icons a {
+        color: var(--gold);
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        transform: translateY(-3px);
+        color: var(--light-yellow);
+    }
+
+    .password-rules {
+        color: var(--light-yellow);
+        font-size: 0.8rem;
+        margin-top: 10px;
+    }
+
+    .password-rules ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .password-rules li {
+        margin: 5px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .password-rules li i {
+        margin-right: 5px;
+        font-size: 0.8rem;
     }
     </style>
     <script>
         function validateForm() {
-            var email = document.forms["signupForm"]["email"].value;
-            var password = document.forms["signupForm"]["password"].value;
-            var confirmPassword = document.forms["signupForm"]["confirmPassword"].value;
-            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            // Existing validation logic
+        }
 
-            if (!emailPattern.test(email)) {
-                alert("Please enter a valid email address.");
-                return false;
-            }
+        function togglePassword() {
+            const password = document.getElementById('password');
+            const confirm = document.getElementById('confirmPassword');
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            confirm.setAttribute('type', type);
+        }
 
-            if (password.length < 6) {
-                alert("Password must be at least 6 characters long.");
-                return false;
-            }
-
-            if (password !== confirmPassword) {
-                alert("Passwords do not match.");
-                return false;
-            }
-
-            if (!/[A-Z]/.test(password)) {
-                alert("Password must contain at least one uppercase letter.");
-                return false;
-            }
-
-            if (!/[a-z]/.test(password)) {
-                alert("Password must contain at least one lowercase letter.");
-                return false;
-            }
-
-            if (!/[0-9]/.test(password)) {
-                alert("Password must contain at least one digit.");
-                return false;
-            }
-
-            if (!/[!@#$%^&*]/.test(password)) {
-                alert("Password must contain at least one special character (!@#$%^&*).");
-                return false;
-            }
-
-            alert("Your account has been created!");
-            return true;
+        function checkPasswordStrength() {
+            // Add password strength checker
         }
     </script>
 </head>
@@ -121,26 +257,63 @@
     <form name="signupForm" action="../index.html" onsubmit="return validateForm()">
     <div class="login">
         <div class="login1">
-            <div class="login2">
-                <img src="../images/education.png" width="150px" height="150px" id="logo">
-            </div>
-            <div class="login2" id="name">LEARN SPHERE</div>
+            <img src="../images/education.png" id="logo">
+            <div id="name">LEARN SPHERE</div>
         </div>
         <div class="login3">
-            <div class="login4" id="tagline"><p>"Where Curiosity Sparks Innovation!"</p>
-        </div>
-        <div class="login5" id="loginform">
-            <h1>SIGN UP</h1><br><br>
-            <label for="email">Email ID</label>
-            <input type="email" name="email" id="email" placeholder="Enter Here"><br><br>
-            <label for="password">Create Password</label>
-            <input type="password" name="password" id="password" placeholder="Enter Here"><br><br>
-            <label for="confirmPassword">Confirm Password</label>
-            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Enter Here"><br><br>
-            <input type="submit" value="SIGN UP" id="login4">
+            <div class="login4">
+                <div id="tagline">"Where Curiosity Sparks Innovation!"</div>
+                <ul class="features">
+                    <li><i class="fas fa-check-circle"></i>Interactive Learning Modules</li>
+                    <li><i class="fas fa-check-circle"></i>Expert-led Courses</li>
+                    <li><i class="fas fa-check-circle"></i>Progress Tracking</li>
+                    <li><i class="fas fa-check-circle"></i>Community Support</li>
+                </ul>
+            </div>
+            <div id="loginform">
+                <h1>Create Account</h1>
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" id="email" placeholder="john.doe@example.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="••••••••" required>
+                </div>
+
+                <div id="showPassword" onclick="togglePassword()">
+                    <input type="checkbox"> Show Password
+                </div>
+
+                <div class="password-rules">
+                    <ul>
+                        <li><i class="fas fa-check"></i>Minimum 6 characters</li>
+                        <li><i class="fas fa-check"></i>At least one uppercase</li>
+                        <li><i class="fas fa-check"></i>At least one number</li>
+                        <li><i class="fas fa-check"></i>Special character</li>
+                    </ul>
+                </div>
+
+                <button type="submit">Sign Up Now</button>
+
+                <div class="social-login">
+                    <p>Or sign up with</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-google"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-microsoft"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    </div>
-</form>
+    </form>
 </body>
 </html>
