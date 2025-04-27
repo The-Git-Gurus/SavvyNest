@@ -13,6 +13,7 @@ Welcome to *Savvy Nest* — a modern learning platform designed to empower learn
 - [🤝 Contributing](#-contributing)
 - [👥 Team](#-team)
 - [📄 License](#-license)
+- [📄.gitignore](#-gitignore)
 
 ---
 
@@ -48,8 +49,11 @@ SavvyNest/
 ├── learning/        # Learning modules or content<br>
 ├── login/           # Login-related files<br>
 ├── CONTRIBUTING.md  # Contribution guidelines<br>
+├── LICENSE          # MIT License file<br>
+├── .gitignore       # Specifies intentionally untracked files<br>
 ├── index.html       # Main landing page<br>
 └── README.md        # Project overview<br>
+
 
 ## 📸 Screenshots
 
@@ -77,6 +81,14 @@ Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get sta
 ## 📄 License
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+
+---
+## 📄 .gitignore
+
+- `node_modules/` (in case of future npm packages)
+- `.vscode/` folder (personal IDE settings)
+- `.DS_Store`, `Thumbs.db` (system files)
+- `*.log`, `*.tmp` (temporary or log files)
 
 ---
 
