@@ -6,4 +6,26 @@ body {
     padding: 20px;
 }
 
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    color: #ffffff;
+    background-image: linear-gradient(to right,rgb(14, 10, 3),rgb(0, 0, 0));
+    border-radius: 80px;;
+}
+h3 {
+    color:rgb(37, 40, 37);
+
+}
+.course-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+
 
