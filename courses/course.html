@@ -465,17 +465,17 @@
     </div>
 
     <script>
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        function purchaseCourse(courseName) {
-            alert(You have purchased the ${courseName} course.);
-        }
+function purchaseCourse(courseName) {
+    alert(`You have purchased the ${courseName} course.`);
+}
 
-        function addToCart(courseName, price) {
-            cart.push({ courseName, price });
-            localStorage.setItem('cart', JSON.stringify(cart));
-            alert(${courseName} has been added to your cart.);
-        }
+function addToCart(courseName, price) {
+    cart.push({ courseName, price }); // Fixed object syntax
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${courseName} has been added to your cart.`); // Fixed template literal
+}
 
         function searchCourses() {
             let input = document.getElementById('searchBar').value.toLowerCase();
