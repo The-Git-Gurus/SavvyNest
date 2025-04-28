@@ -298,8 +298,8 @@
         <ul class="nav-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="#" class="active">Courses</a></li>
-            <li><a href="../cart.html">Cart</a></li>
-            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="../feedback/feedbackform.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -338,7 +338,7 @@
                 <p>Explore data analysis, machine learning, and statistics.</p>
                 <h3>₹5,500</h3>
                 <div class="course-buttons">
-                    <button class="btn purchase-btn" onclick="purchaseCourse('Data Science')">Purchase</button>
+                    <a href="../learning/studymaterial.html"><button class="btn purchase-btn" onclick="purchaseCourse('Web Development')">Purchase</button></a>
                     <button class="btn cart-btn" onclick="addToCart('Data Science', 5500)">Add to Cart</button>
                     <button class="btn details-btn" onclick="showDetails('course2')">View Details</button>
                 </div>
@@ -352,7 +352,7 @@
                 <p>Create stunning visuals with design principles and tools.</p>
                 <h3>₹3,500</h3>
                 <div class="course-buttons">
-                    <button class="btn purchase-btn" onclick="purchaseCourse('Graphic Design')">Purchase</button>
+                    <a href="../learning/studymaterial.html"><button class="btn purchase-btn" onclick="purchaseCourse('Web Development')">Purchase</button></a>
                     <button class="btn cart-btn" onclick="addToCart('Graphic Design', 3500)">Add to Cart</button>
                     <button class="btn details-btn" onclick="showDetails('course3')">View Details</button>
                 </div>
@@ -366,7 +366,7 @@
                 <p>Master online marketing strategies and tools.</p>
                 <h3>₹5,500</h3>
                 <div class="course-buttons">
-                    <button class="btn purchase-btn" onclick="purchaseCourse('Digital Marketing')">Purchase</button>
+                    <a href="../learning/studymaterial.html"><button class="btn purchase-btn" onclick="purchaseCourse('Web Development')">Purchase</button></a>
                     <button class="btn cart-btn" onclick="addToCart('Digital Marketing', 5500)">Add to Cart</button>
                     <button class="btn details-btn" onclick="showDetails('course4')">View Details</button>
                 </div>
@@ -380,7 +380,7 @@
                 <p>Start from the basics and go all the way to creating your own applications.</p>
                 <h3>₹4,600</h3>
                 <div class="course-buttons">
-                    <button class="btn purchase-btn" onclick="purchaseCourse('Python')">Purchase</button>
+                    <a href="../learning/studymaterial.html"><button class="btn purchase-btn" onclick="purchaseCourse('Web Development')">Purchase</button></a>
                     <button class="btn cart-btn" onclick="addToCart('Python', 4600)">Add to Cart</button>
                     <button class="btn details-btn" onclick="showDetails('course5')">View Details</button>
                 </div>
@@ -394,7 +394,7 @@
                 <p>Introduction to wireless and mobile communications.</p>
                 <h3>₹1,200</h3>
                 <div class="course-buttons">
-                    <button class="btn purchase-btn" onclick="purchaseCourse('Mobile Communication')">Purchase</button>
+                    <a href="../learning/studymaterial.html"><button class="btn purchase-btn" onclick="purchaseCourse('Web Development')">Purchase</button></a>
                     <button class="btn cart-btn" onclick="addToCart('Mobile Communication', 1200)">Add to Cart</button>
                     <button class="btn details-btn" onclick="showDetails('course6')">View Details</button>
                 </div>
@@ -408,7 +408,7 @@
                 <p>Master advanced tools in mathematics.</p>
                 <h3>₹3,300</h3>
                 <div class="course-buttons">
-                    <button class="btn purchase-btn" onclick="purchaseCourse('Computational Mathematics')">Purchase</button>
+                    <a href="../learning/studymaterial.html"><button class="btn purchase-btn" onclick="purchaseCourse('Web Development')">Purchase</button></a>
                     <button class="btn cart-btn" onclick="addToCart('Computational Mathematics', 3300)">Add to Cart</button>
                     <button class="btn details-btn" onclick="showDetails('course7')">View Details</button>
                 </div>
@@ -422,7 +422,7 @@
                 <p>Build algorithms, software infrastructure, and data pipelines.</p>
                 <h3>₹6,500</h3>
                 <div class="course-buttons">
-                    <button class="btn purchase-btn" onclick="purchaseCourse('Artificial Intelligence')">Purchase</button>
+                    <a href="../learning/studymaterial.html"><button class="btn purchase-btn" onclick="purchaseCourse('Web Development')">Purchase</button></a>
                     <button class="btn cart-btn" onclick="addToCart('Artificial Intelligence', 6500)">Add to Cart</button>
                     <button class="btn details-btn" onclick="showDetails('course8')">View Details</button>
                 </div>
@@ -436,7 +436,7 @@
                 <p>Master design skills with hands-on experience in system design.</p>
                 <h3>₹7,300</h3>
                 <div class="course-buttons">
-                    <button class="btn purchase-btn" onclick="purchaseCourse('Data Structures & Algorithms')">Purchase</button>
+                    <a href="../learning/studymaterial.html"><button class="btn purchase-btn" onclick="purchaseCourse('Web Development')">Purchase</button></a>
                     <button class="btn cart-btn" onclick="addToCart('Data Structures & Algorithms', 7300)">Add to Cart</button>
                     <button class="btn details-btn" onclick="showDetails('course9')">View Details</button>
                 </div>
@@ -468,13 +468,13 @@
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         function purchaseCourse(courseName) {
-            alert(`You have purchased the ${courseName} course.`);
+            alert(You have purchased the ${courseName} course.);
         }
 
         function addToCart(courseName, price) {
             cart.push({ courseName, price });
             localStorage.setItem('cart', JSON.stringify(cart));
-            alert(`${courseName} has been added to your cart.`);
+            alert(${courseName} has been added to your cart.);
         }
 
         function searchCourses() {
