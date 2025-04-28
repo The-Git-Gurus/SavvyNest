@@ -5,39 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/features.css">
     <title>FEATURES</title>
+    <link rel="icon" href="../images/education.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
     
 </head>
 <body>
-    <!-- symbol -->
+    
     <div class="symbol">
         <img src="../images/education.png" alt="education" class="img">
         <h1> Savvy Nest</h1>
        </div>
 
-    <!-- Navbar -->
+    
     <div class="navbar">
     <a href="../index.html" target="_top" class="a">Home</a>
 <a href="features.html" target="_top" class="a">Features</a>
 <a href="course.html" target="_top" class="a">Courses</a>
 <a href="faculty.html" target="_top" class="a">Faculty</a>
-<a href="../login/loginnnn.html" target="_top" class="a">LogIn</a>
+<a href="../login/login.html" target="_top" class="a">LogIn</a>
 <a href="../about/aboutus.html" target="_top" class="a">AboutUs</a>
 <a href="../login/signnuppp.html" target="_top" class="a1"> SignUp</a>
     </div>
 
-    <!-- heading -->
+ 
     <h1 class="heading">Awesome Features</h1>
     <h6 class="line">Learn at your own pace with flexible scheduling—education on your terms!</h6>
 
-    <!-- features -->
+   
      
     <div class="features">
         <a href="#img1" class="anchor1">
         <div class="feature1">
             <i class="fa-solid fa-graduation-cap"></i>
             <h2>Scholarship Facility</h2>
-        <p>Quality education should be accessible to everyone.</p>
+            <p>Quality education should be accessible to everyone.</p>
         </div>
         </a>
 
@@ -48,7 +49,7 @@
             </div>
         </div>
         
-        <a href="learning/learningplatform1234.html" class="anchor2">
+        <a href="course.html" class="anchor2">
         <div class="feature2">
             <i class="fa-solid fa-laptop-code"></i>
         <h2>Online Courses</h2>
@@ -84,18 +85,25 @@
             </div>
         </div>
         <script>
-            const slides=document.querySelectorAll('.slide');
-            let currentindex=0;
-            function show_slide(index){
-                const offset=-index*100;
-                document.querySelector('.slides').style.transform=`translateX(${offset}%)`;
+            function addToCart(courseName, price) {
+            cart.push({courseName, price});
+            alert(courseName + ' has been added to your cart.');
+        }
+
+        function searchCourses() {
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            let courseContainer = document.getElementById('courseContainer');
+            let courses = courseContainer.getElementsByClassName('course-box');
+
+            for (let i = 0; i < courses.length; i++) {
+                let courseTitle = courses[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+                if (courseTitle.includes(input)) {
+                    courses[i].style.display = '';
+                } else {
+                    courses[i].style.display = 'none';
+                }
             }
-            function next_slide(){
-                currentindex=(currentindex+1)%slides.length;
-                show_slide(currentindex);
-            }
-            next_slide();
-            setInterval(next_slide,1000)
+        }
         </script>
     </section>
 

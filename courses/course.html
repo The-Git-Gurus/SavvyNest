@@ -3,121 +3,564 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses Page</title>
-    <link rel="stylesheet" href="../css/learningplatform1.css">
+    <title>Courses - LearnSphere</title>
+    <link rel="icon" href="../images/education.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fa;
+            color: #cf8412;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2c3e50;
+            padding: 15px 50px;
+            color: #aabf1f06;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar .logo h1 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #1abc9c;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #7b961951, #c6ba0fd7);
+            color: #fff;
+            animation: fadeIn 1s ease-in;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #searchBar {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        #searchBar:focus {
+            outline: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Course Container */
+        .course-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .course-box {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .course-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-img img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .course-box h2 {
+            font-size: 22px;
+            margin: 15px;
+            color: #2c3e50;
+        }
+
+        .course-box p {
+            font-size: 14px;
+            margin: 0 15px 10px;
+            color: #7f8c8d;
+        }
+
+        .course-box h3 {
+            font-size: 18px;
+            margin: 0 15px 15px;
+            color: #e74c3c;
+        }
+
+        .course-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .purchase-btn {
+            background: #b3d40d;
+            color: #fff;
+        }
+
+        .purchase-btn:hover {
+            background: #a0a016;
+        }
+
+        .cart-btn {
+            background: #455219;
+            color: #fff;
+        }
+
+        .cart-btn:hover {
+            background: #bd7b17;
+        }
+
+        .details-btn {
+            background: #ecf0f1;
+            color: #2c3e50;
+        }
+
+        .details-btn:hover {
+            background: #bdc3c7;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 200;
+        }
+
+        .modal-content {
+            background: #fff;
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background: #614e31;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #dfd815;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .nav-links {
+                margin-top: 10px;
+            }
+
+            .nav-links li {
+                margin: 0 10px;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            .course-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../images/education.png" alt="Logo">
+            <h1>LearnSphere</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#" class="active">Courses</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="../feedback/feedbackform.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
     <header>
-        <h1>Available Courses</h1>
-        <input type="text" id="searchBar" placeholder="Search Courses..." onkeyup="searchCourses()">
+        <h1>Explore Our Courses</h1>
+        <p>Unlock your potential with our expertly crafted courses!</p>
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="🔍 Search Courses..." onkeyup="searchCourses()">
+        </div>
     </header>
+
+    <!-- Main Content -->
     <main>
         <div class="course-container" id="courseContainer">
-            <div class="course-box" onclick="showDetails('course1')">
+            <!-- Course 1 -->
+            <div class="course-box" data-course-id="course1">
+                <div class="course-img">
+                    <img src="../images/webdev.jpg" alt="Web Development">
+                </div>
                 <h2>Web Development</h2>
-                <p>Learn how to build websites using HTML, CSS, and JavaScript.</p>
-                <h3>Price : 5800 INR </h3>
-                <a href="../learning/studymaterial.html"><button onclick="purchaseCourse('Web Development')">Purchase</button></a>
-                <button onclick="addToCart('Web Development', 5800)">Add to Cart</button>
-                <button onclick="showDetails('course1')">View Details</button>
+                <p>Learn to build websites using HTML, CSS, and JavaScript.</p>
+                <h3>₹5,800</h3>
+                <div class="course-buttons">
+                    <a href="../learning/studymaterial.html"><button class="btn purchase-btn" onclick="purchaseCourse('Web Development')">Purchase</button></a>
+                    <button class="btn cart-btn" onclick="addToCart('Web Development', 5800)">Add to Cart</button>
+                    <button class="btn details-btn" onclick="showDetails('course1')">View Details</button>
+                </div>
             </div>
-            <div class="course-box" onclick="showDetails('course2')">
+            <!-- Course 2 -->
+            <div class="course-box" data-course-id="course2">
+                <div class="course-img">
+                    <img src="../images/datas.jpg" alt="Data Science">
+                </div>
                 <h2>Data Science</h2>
                 <p>Explore data analysis, machine learning, and statistics.</p>
-                <h3>Price : 5500 INR </h3>
-                <button onclick="purchaseCourse('Data Science')">Purchase</button>
-                <button onclick="addToCart('Data Science', 5500)">Add to Cart</button>
-                <button onclick="showDetails('course2')">View Details</button>
+                <h3>₹5,500</h3>
+                <div class="course-buttons">
+                    <a href="../learning/studymaterial.html"><button class="btn purchase-btn" onclick="purchaseCourse('Web Development')">Purchase</button></a>
+                    <button class="btn cart-btn" onclick="addToCart('Data Science', 5500)">Add to Cart</button>
+                    <button class="btn details-btn" onclick="showDetails('course2')">View Details</button>
+                </div>
             </div>
-            <div class="course-box" onclick="showDetails('course3')">
+            <!-- Course 3 -->
+            <div class="course-box" data-course-id="course3">
+                <div class="course-img">
+                    <img src="../images/grap.jpg" alt="Graphic Design">
+                </div>
                 <h2>Graphic Design</h2>
                 <p>Create stunning visuals with design principles and tools.</p>
-                <h3>Price : 3500 INR </h3>
-                <button onclick="purchaseCourse('Graphic Design')">Purchase</button>
-                <button onclick="addToCart('Graphic Design', 3500)">Add to Cart</button>
-                <button onclick="showDetails('course3')">View Details</button>
+                <h3>₹3,500</h3>
+                <div class="course-buttons">
+                    <a href="../learning/studymaterial.html"><button class="btn purchase-btn" onclick="purchaseCourse('Web Development')">Purchase</button></a>
+                    <button class="btn cart-btn" onclick="addToCart('Graphic Design', 3500)">Add to Cart</button>
+                    <button class="btn details-btn" onclick="showDetails('course3')">View Details</button>
+                </div>
             </div>
-            <div class="course-box" onclick="showDetails('course4')">
+            <!-- Course 4 -->
+            <div class="course-box" data-course-id="course4">
+                <div class="course-img">
+                    <img src="../images/download.jpeg" alt="Digital Marketing">
+                </div>
                 <h2>Digital Marketing</h2>
                 <p>Master online marketing strategies and tools.</p>
-                <h3>Price : 5500 INR </h3>
-                <button onclick="purchaseCourse('Digital Marketing')">Purchase</button>
-                <button onclick="addToCart('Digital Marketing', 5500)">Add to Cart</button>
-                <button onclick="showDetails('course4')">View Details</button>
+                <h3>₹5,500</h3>
+                <div class="course-buttons">
+                    <a href="../learning/studymaterial.html"><button class="btn purchase-btn" onclick="purchaseCourse('Web Development')">Purchase</button></a>
+                    <button class="btn cart-btn" onclick="addToCart('Digital Marketing', 5500)">Add to Cart</button>
+                    <button class="btn details-btn" onclick="showDetails('course4')">View Details</button>
+                </div>
             </div>
-            <div class="course-box" onclick="showDetails('course5')">
+            <!-- Course 5 -->
+            <div class="course-box" data-course-id="course5">
+                <div class="course-img">
+                    <img src="../images/Python.png" alt="Python">
+                </div>
                 <h2>Python</h2>
-                <p>Start from the basics and go all the way to creating your own applications</p>
-                <h3>Price : 4600 INR </h3>
-                <button onclick="purchaseCourse('Python')">Purchase</button>
-                <button onclick="addToCart('Python', 4600)">Add to Cart</button>
-                <button onclick="showDetails('course5')">View Details</button>
+                <p>Start from the basics and go all the way to creating your own applications.</p>
+                <h3>₹4,600</h3>
+                <div class="course-buttons">
+                    <a href="../learning/studymaterial.html"><button class="btn purchase-btn" onclick="purchaseCourse('Web Development')">Purchase</button></a>
+                    <button class="btn cart-btn" onclick="addToCart('Python', 4600)">Add to Cart</button>
+                    <button class="btn details-btn" onclick="showDetails('course5')">View Details</button>
+                </div>
             </div>
-            <div class="course-box" onclick="showDetails('course6')">
+            <!-- Course 6 -->
+            <div class="course-box" data-course-id="course6">
+                <div class="course-img">
+                    <img src="../images/gd.jpg" alt="Mobile Communication">
+                </div>
                 <h2>Mobile Communication</h2>
-                <p> Wireless and Mobile Communications Introduction to mobile communication.</p>
-                <h3>Price : 1200 INR </h3>
-                <button onclick="purchaseCourse('Mobile Communication')">Purchase</button>
-                <button onclick="addToCart('Mobile Communication', 1200)">Add to Cart</button>
-                <button onclick="showDetails('course6')">View Details</button>
+                <p>Introduction to wireless and mobile communications.</p>
+                <h3>₹1,200</h3>
+                <div class="course-buttons">
+                    <a href="../learning/studymaterial.html"><button class="btn purchase-btn" onclick="purchaseCourse('Web Development')">Purchase</button></a>
+                    <button class="btn cart-btn" onclick="addToCart('Mobile Communication', 1200)">Add to Cart</button>
+                    <button class="btn details-btn" onclick="showDetails('course6')">View Details</button>
+                </div>
             </div>
-            <div class="course-box" onclick="showDetails('course7')">
+            <!-- Course 7 -->
+            <div class="course-box" data-course-id="course7">
+                <div class="course-img">
+                    <img src="../images/gd.jpg" alt="Computational Mathematics">
+                </div>
                 <h2>Computational Mathematics</h2>
-                <p>Master advance tools in mathematics</p>
-                <h3>Price : 3300 INR </h3>
-                <button onclick="purchaseCourse('Computational Mathematics')">Purchase</button>
-                <button onclick="addToCart('Computational Mathematics', 3300)">Add to Cart</button>
-                <button onclick="showDetails('course7')">View Details</button>
+                <p>Master advanced tools in mathematics.</p>
+                <h3>₹3,300</h3>
+                <div class="course-buttons">
+                    <a href="../learning/studymaterial.html"><button class="btn purchase-btn" onclick="purchaseCourse('Web Development')">Purchase</button></a>
+                    <button class="btn cart-btn" onclick="addToCart('Computational Mathematics', 3300)">Add to Cart</button>
+                    <button class="btn details-btn" onclick="showDetails('course7')">View Details</button>
+                </div>
             </div>
-            <div class="course-box" onclick="showDetails('course8')">
+            <!-- Course 8 -->
+            <div class="course-box" data-course-id="course8">
+                <div class="course-img">
+                    <img src="../images/ai.jpg" alt="Artificial Intelligence">
+                </div>
                 <h2>Artificial Intelligence</h2>
-                <p>Apply Today. Build Algorithms, Software Infrastructure and Data Pipelines.</p>
-                <h3>Price : 6500 INR </h3>
-                <button onclick="purchaseCourse('Artificial Intelligence')">Purchase</button>
-                <button onclick="addToCart('Artificial Intelligence', 6500)">Add to Cart</button>
-                <button onclick="showDetails('course8')">View Details</button>
+                <p>Build algorithms, software infrastructure, and data pipelines.</p>
+                <h3>₹6,500</h3>
+                <div class="course-buttons">
+                    <a href="../learning/studymaterial.html"><button class="btn purchase-btn" onclick="purchaseCourse('Web Development')">Purchase</button></a>
+                    <button class="btn cart-btn" onclick="addToCart('Artificial Intelligence', 6500)">Add to Cart</button>
+                    <button class="btn details-btn" onclick="showDetails('course8')">View Details</button>
+                </div>
             </div>
-            <div class="course-box" onclick="showDetails('course9')">
+            <!-- Course 9 -->
+            <div class="course-box" data-course-id="course9">
+                <div class="course-img">
+                    <img src="../images/ds.avif" alt="DSA">
+                </div>
                 <h2>DSA</h2>
-                <p>Master design skills with hands-on experience in System Design</p>
-                <h3>Price : 7300 INR </h3>
-                <button onclick="purchaseCourse('Data Structures & Algorithms')">Purchase</button>
-                <button onclick="addToCart('Data Structures & Algorithms', 7300)">Add to Cart</button>
-                <button onclick="showDetails('course9')">View Details</button>
+                <p>Master design skills with hands-on experience in system design.</p>
+                <h3>₹7,300</h3>
+                <div class="course-buttons">
+                    <a href="../learning/studymaterial.html"><button class="btn purchase-btn" onclick="purchaseCourse('Web Development')">Purchase</button></a>
+                    <button class="btn cart-btn" onclick="addToCart('Data Structures & Algorithms', 7300)">Add to Cart</button>
+                    <button class="btn details-btn" onclick="showDetails('course9')">View Details</button>
+                </div>
             </div>
         </div>
     </main>
 
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 LearnSphere. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+
+    <!-- Modal for Course Details -->
+    <div class="modal" id="courseModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">×</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <h3 id="modalPrice"></h3>
+        </div>
+    </div>
+
     <script>
-        let cart = [];
+ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        function purchaseCourse(courseName) {
-            alert('You have purchased the ' + courseName + ' course.');
-        }
+function purchaseCourse(courseName) {
+    alert(`You have purchased the ${courseName} course.`);
+}
 
-        function showDetails(courseId) {
-            // Add functionality to show course details here
-        }
-
-        function addToCart(courseName, price) {
-            cart.push({courseName, price});
-            alert(courseName + ' has been added to your cart.');
-        }
+function addToCart(courseName, price) {
+    cart.push({ courseName, price }); // Fixed object syntax
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${courseName} has been added to your cart.`); // Fixed template literal
+}
 
         function searchCourses() {
             let input = document.getElementById('searchBar').value.toLowerCase();
-            let courseContainer = document.getElementById('courseContainer');
-            let courses = courseContainer.getElementsByClassName('course-box');
+            let courses = document.getElementsByClassName('course-box');
 
-            for (let i = 0; i < courses.length; i++) {
-                let courseTitle = courses[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
-                if (courseTitle.includes(input)) {
-                    courses[i].style.display = '';
-                } else {
-                    courses[i].style.display = 'none';
-                }
+            for (let course of courses) {
+                let title = course.getElementsByTagName('h2')[0].innerText.toLowerCase();
+                course.style.display = title.includes(input) ? '' : 'none';
             }
         }
+
+        function showDetails(courseId) {
+            const courseData = {
+                course1: {
+                    title: 'Web Development',
+                    description: 'Learn to build responsive websites using HTML, CSS, JavaScript, and modern frameworks.',
+                    price: '₹5,800'
+                },
+                course2: {
+                    title: 'Data Science',
+                    description: 'Master data analysis, machine learning, and statistical modeling with Python and R.',
+                    price: '₹5,500'
+                },
+                course3: {
+                    title: 'Graphic Design',
+                    description: 'Create stunning visuals using Adobe Photoshop, Illustrator, and design principles.',
+                    price: '₹3,500'
+                },
+                course4: {
+                    title: 'Digital Marketing',
+                    description: 'Master SEO, social media, and online advertising strategies.',
+                    price: '₹5,500'
+                },
+                course5: {
+                    title: 'Python',
+                    description: 'Learn Python programming from basics to advanced application development.',
+                    price: '₹4,600'
+                },
+                course6: {
+                    title: 'Mobile Communication',
+                    description: 'Explore wireless technologies and mobile communication systems.',
+                    price: '₹1,200'
+                },
+                course7: {
+                    title: 'Computational Mathematics',
+                    description: 'Dive into advanced mathematical tools for computational applications.',
+                    price: '₹3,300'
+                },
+                course8: {
+                    title: 'Artificial Intelligence',
+                    description: 'Build AI algorithms, software infrastructure, and data pipelines.',
+                    price: '₹6,500'
+                },
+                course9: {
+                    title: 'DSA',
+                    description: 'Master data structures, algorithms, and system design with hands-on practice.',
+                    price: '₹7,300'
+                }
+            };
+
+            const modal = document.getElementById('courseModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const modalPrice = document.getElementById('modalPrice');
+
+            const course = courseData[courseId];
+            if (course) {
+                modalTitle.innerText = course.title;
+                modalDescription.innerText = course.description;
+                modalPrice.innerText = course.price;
+                modal.style.display = 'block';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('courseModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('courseModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
     </script>
 </body>
 </html>

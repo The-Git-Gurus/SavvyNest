@@ -1,0 +1,15 @@
+# Node modules (if you use npm in future)
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# VS Code settings (if your team uses VSCode)
+.vscode/
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
