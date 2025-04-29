@@ -14,7 +14,7 @@ Welcome! We're excited you're here to help improve this project.
 ## 🐛 Reporting Issues
 
 - Use the "Issues" tab
-- Describe the problem clearly
+- Describe the problem clearly!
 - Include steps to reproduce, and screenshots if possible
 
 ## 💡 Suggesting Features
