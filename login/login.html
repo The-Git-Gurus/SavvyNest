@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Savvy Nest</title>
+    <title>login - Savvy Nest</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="../images/education.png">
     <style>
@@ -13,7 +13,7 @@
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
-        /* this is body */
+        
         body {
             background: linear-gradient(45deg, #eabe1f, #ff6b6b);
             min-height: 100vh;
@@ -211,7 +211,7 @@
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             
-            // Simple validation
+            
             if (!validateEmail(email)) {
                 showError('Please enter a valid email address');
                 return;
@@ -222,7 +222,7 @@
                 return;
             }
             
-            // Simulate API call
+            
             showLoading();
             setTimeout(() => {
                 window.location.href = '../index.html';
@@ -255,7 +255,7 @@
             btn.disabled = true;
         }
 
-        // Add ripple effect to button
+     
         document.querySelector('.login-btn').addEventListener('click', function(e) {
             let ripple = document.createElement('div');
             ripple.style.position = 'absolute';
