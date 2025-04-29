@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    
+    <meta charset="UTF-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>front page-Savvy Nest</title>
     <link rel="icon" href="images/education.png">
@@ -38,14 +37,12 @@
     <div>
     <a href="courses/course.html" target="_top" class="a2">Explore Courses</a>
 </div>
-
 <div class="picture">
 <div class="bgcolor">
     <img src="images/file.png" alt="person" class="person">
 </div>
 </div>
 
-<!-- testimonials section -->
 <section>
 <div class="testimonials">
     <h1 class="testheading">Our Testimonials</h1>
@@ -133,5 +130,122 @@
         }
     </script>
 </section>
+<!-- Chatbot Ball -->
+<div id="chatball" onclick="toggleChat()">
+    💬
+</div>
+
+<!-- Chatbot Window -->
+<div id="chatbox">
+    <div id="chat-header">Savvy Nest Bot <span onclick="toggleChat()">✖</span></div>
+    <div id="chat-messages"></div>
+    <input type="text" id="user-input" placeholder="Type a message..." onkeypress="handleKey(event)">
+</div>
+
+<style>
+    #chatball {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background-color:rgb(212, 212, 31);
+        color: white;
+        font-size: 28px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 60px;
+        cursor: pointer;
+        z-index: 999;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    #chatbox {
+        display: none;
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        width: 300px;
+        height: 400px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        z-index: 999;
+        flex-direction: column;
+        overflow: hidden;
+        font-family: sans-serif;
+    }
+
+    #chat-header {
+        background: rgb(212, 212, 31);
+        color: white;
+        padding: 10px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #chat-messages {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+        height: 300px;
+    }
+
+    #user-input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-top: 1px solid #ccc;
+        box-sizing: border-box;
+        outline: none;
+    }
+
+    .message {
+        margin: 5px 0;
+        padding: 8px;
+        border-radius: 5px;
+        max-width: 80%;
+        clear: both;
+    }
+
+    .user {
+        background: #DCF8C6;
+        float: right;
+    }
+
+    .bot {
+        background: #F1F0F0;
+        float: left;
+    }
+</style>
+<script>
+    function toggleChat() {
+        const box = document.getElementById("chatbox");
+        box.style.display = box.style.display === "none" || box.style.display === "" ? "flex" : "none";
+    }
+
+    function addMessage(content, sender) {
+        const chat = document.getElementById("chat-messages");
+        const msg = document.createElement("div");
+        msg.className = `message ${sender}`;
+        msg.textContent = content;
+        chat.appendChild(msg);
+        chat.scrollTop = chat.scrollHeight;
+    }
+
+    async function handleKey(event) {
+        if (event.key === "Enter") {
+            const input = document.getElementById("user-input");
+            const userMessage = input.value.trim();
+            if (userMessage === "") return;
+            addMessage(userMessage, "user");
+            input.value = "";
+            const botReply = "How can I help you?"; // Always send this reply
+            addMessage(botReply, "bot");
+        }
+    }
+</script>
 </body>
 </html>
