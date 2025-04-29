@@ -34,4 +34,4 @@ Be respectful, kind, and collaborative.
 
 ---
 
-Thank you for contributing! 💙
+Thank you for contributing to [The Git Gurus](https://github.com/The-Git-Gurus)! 💙
