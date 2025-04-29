@@ -97,6 +97,7 @@ body{
     margin-top:-15px;
 }
 
+
 .testheading{
     font-size: 45px;
     font-weight: 600;
@@ -107,7 +108,7 @@ body{
     text-align: center;
     margin-left:27.5%;
     height:60px;
-    /* align-content: center; */
+   
 }
 
 .testline{
