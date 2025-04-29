@@ -14,7 +14,7 @@ Welcome! We're excited you're here to help improve this project.
 ## 🐛 Reporting Issues
 
 - Use the "Issues" tab
-- Describe the problem clearly
+- Describe the problem clearly!
 - Include steps to reproduce, and screenshots if possible
 
 ## 💡 Suggesting Features
@@ -34,4 +34,4 @@ Be respectful, kind, and collaborative.
 
 ---
 
-Thank you for contributing! 💙
+Thank you for contributing to [The Git Gurus](https://github.com/The-Git-Gurus)! 💙
