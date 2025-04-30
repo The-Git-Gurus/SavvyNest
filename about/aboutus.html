@@ -5,35 +5,19 @@
   <title>About Us - Savvy Nest</title>
   <link rel="icon" href="../images/education.png" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/about.css" />
   <style>
     body {
-      font-family: 'Inter', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      background: linear-gradient(135deg, #fde047, #facc15);
-      overflow-x: hidden;
+      font-family: 'Inter', sans-serif;
     }
     .glass {
-      background: rgba(255, 255, 255, 0.3);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1s ease-out, transform 1s ease-out;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
+      background-color: rgba(255, 255, 255, 0.6);
     }
     .flip-card {
       background-color: transparent;
-      width: 260px;
+      width: 250px;
       height: 300px;
       perspective: 1000px;
     }
@@ -52,41 +36,51 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       border-radius: 1rem;
+      padding: 1.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      background: white;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
+    .flip-card-front {
+      background: linear-gradient(to right, #fef9c3, #fde68a);
     }
     .flip-card-back {
-      background: #facc15;
+      background: linear-gradient(to right, #8fa4d6, #839fca);
       transform: rotateY(180deg);
-      color: #333;
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 
-<body class="relative min-h-screen">
+<body class="relative min-h-screen bg-gradient-to-br from-yellow-50 via-white to-cyan-100">
 
-  <img alt="Background students studying" class="pointer-events-none fixed inset-0 w-full h-full object-cover opacity-5 -z-10" src="https://storage.googleapis.com/a1aa/image/21fa66f7-85b1-411d-d7c6-97df3f36619d.jpg" />
+  <!-- Background -->
+  <img alt="Background students studying" class="pointer-events-none fixed inset-0 w-full h-full object-cover opacity-10 -z-10" src="https://storage.googleapis.com/a1aa/image/21fa66f7-85b1-411d-d7c6-97df3f36619d.jpg" />
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <header class="flex items-center justify-center text-center h-[80vh]">
     <div class="glass p-12 rounded-3xl shadow-2xl fade-in">
-      <h1 class="text-6xl font-extrabold text-gray-800 mb-4 animate-bounce">About Us</h1>
+      <h1 class="text-6xl font-extrabold text-gray-900 mb-4" style="font-family: 'Orbitron', sans-serif;">About Us</h1>
       <p class="text-xl text-gray-700 max-w-2xl mx-auto">
         Empowering learners. Inspiring change. Welcome to <span class="font-bold text-yellow-600">Savvy Nest</span>.
       </p>
     </div>
   </header>
 
+  <!-- Main Content -->
   <main class="container mx-auto max-w-7xl px-6 py-20 space-y-24">
 
-    <!-- Mission Section -->
+    <!-- Mission -->
     <section class="glass rounded-3xl p-12 shadow-lg fade-in">
       <h2 class="text-4xl font-bold text-gray-800 mb-6 text-center">Our Mission</h2>
       <p class="text-gray-700 text-lg leading-relaxed text-center">
@@ -94,93 +88,39 @@
       </p>
     </section>
 
-    <!-- Values Section -->
+    <!-- Values -->
     <section class="glass rounded-3xl p-12 shadow-lg fade-in">
       <h2 class="text-4xl font-bold text-gray-800 mb-10 text-center">Our Values</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-lg text-gray-700">
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-4 hover:scale-105 transition">
           <i class="fas fa-balance-scale text-yellow-500 text-3xl"></i>
           <span><strong>Integrity:</strong> We believe in transparency and honesty.</span>
         </div>
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-4 hover:scale-105 transition">
           <i class="fas fa-star text-yellow-500 text-3xl"></i>
           <span><strong>Excellence:</strong> Delivering nothing but the best.</span>
         </div>
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-4 hover:scale-105 transition">
           <i class="fas fa-lightbulb text-yellow-500 text-3xl"></i>
           <span><strong>Innovation:</strong> Embracing bold ideas and change.</span>
         </div>
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-4 hover:scale-105 transition">
           <i class="fas fa-users text-yellow-500 text-3xl"></i>
           <span><strong>Teamwork:</strong> Collaboration over competition.</span>
         </div>
       </div>
     </section>
 
-    <!-- Team Section -->
+    <!-- Team -->
     <section class="fade-in">
       <h2 class="text-4xl font-bold text-gray-800 text-center mb-14">Meet Our Team</h2>
       <div class="flex flex-wrap justify-center gap-10">
         <!-- Team Member Cards -->
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3 class="text-2xl font-bold text-gray-800">Shubhneet Garg</h3>
-              <p class="text-gray-600 mt-2">Teammate</p>
-            </div>
-            <div class="flip-card-back">
-              <p class="text-xl font-semibold">Passionate about Tech and Innovation!🤓</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3 class="text-2xl font-bold text-gray-800">Sandeep Singh Sidhu</h3>
-              <p class="text-gray-600 mt-2">Teammate</p>
-            </div>
-            <div class="flip-card-back">
-              <p class="text-xl font-semibold">Driven by Curiosity and Hard Work!🤩</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3 class="text-2xl font-bold text-gray-800">Priyanshu</h3>
-              <p class="text-gray-600 mt-2">Teammate</p>
-            </div>
-            <div class="flip-card-back">
-              <p class="text-xl font-semibold">Innovation is in my DNA!🫀</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3 class="text-2xl font-bold text-gray-800">Shubham Thakur</h3>
-              <p class="text-gray-600 mt-2">Teammate</p>
-            </div>
-            <div class="flip-card-back">
-              <p class="text-xl font-semibold">Building the future, one line at a time!😎</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3 class="text-2xl font-bold text-gray-800">Shubham Sharma</h3>
-              <p class="text-gray-600 mt-2">Teammate</p>
-            </div>
-            <div class="flip-card-back">
-              <p class="text-xl font-semibold">Coding Dreams into Reality!🤗</p>
-            </div>
-          </div>
-        </div>
+        <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><h3 class="text-2xl font-bold text-gray-800">Shubhneet Garg</h3><p class="text-gray-600 mt-2">Teammate</p></div><div class="flip-card-back"><p class="text-xl font-semibold">Passionate about Tech and Innovation! 🤓</p></div></div></div>
+        <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><h3 class="text-2xl font-bold text-gray-800">Sandeep Singh Sidhu</h3><p class="text-gray-600 mt-2">Teammate</p></div><div class="flip-card-back"><p class="text-xl font-semibold">Driven by Curiosity and Hard Work! 🤩</p></div></div></div>
+        <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><h3 class="text-2xl font-bold text-gray-800">Priyanshu</h3><p class="text-gray-600 mt-2">Teammate</p></div><div class="flip-card-back"><p class="text-xl font-semibold">Innovation is in my DNA! 🫀</p></div></div></div>
+        <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><h3 class="text-2xl font-bold text-gray-800">Shubham Thakur</h3><p class="text-gray-600 mt-2">Teammate</p></div><div class="flip-card-back"><p class="text-xl font-semibold">Building the future, one line at a time! 😎</p></div></div></div>
+        <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><h3 class="text-2xl font-bold text-gray-800">Shubham Sharma</h3><p class="text-gray-600 mt-2">Teammate</p></div><div class="flip-card-back"><p class="text-xl font-semibold">Coding Dreams into Reality! 🤗</p></div></div></div>
       </div>
     </section>
 
@@ -190,27 +130,9 @@
     <p class="text-sm">&copy; 2025 Savvy Nest. All rights reserved.</p>
   </footer>
 
-  <script>
-    // Fade-in on scroll
-    const faders = document.querySelectorAll('.fade-in');
-
-    const appearOptions = {
-      threshold: 0.3,
-      rootMargin: "0px 0px -50px 0px"
-    };
-
-    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
-  </script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="../js/about.js"></script>
 
 </body>
 </html>

@@ -3,242 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Form</title>
+    <title>Feedback Form - Savvy Nest</title>
     <link rel="icon" href="../images/education.png">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        .form {
-            width: 450px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            transform: translateY(0);
-            transition: all 0.3s ease;
-        }
-
-        .form:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
-        }
-
-        .form h1 {
-            text-align: center;
-            font-size: 32px;
-            color: #2d3436;
-            margin-bottom: 30px;
-            font-weight: 600;
-            background: linear-gradient(45deg, #4ecdc4, #ff6b6b);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .input-box {
-            margin: 25px 0;
-            position: relative;
-        }
-
-        .input-box input,
-        .input-box textarea {
-            width: 100%;
-            padding: 15px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .input-box input:focus,
-        .input-box textarea:focus {
-            border-color: #4ecdc4;
-            box-shadow: 0 0 10px rgba(78, 205, 196, 0.2);
-            outline: none;
-        }
-
-        .input-box i {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #666;
-            font-size: 20px;
-        }
-
-        textarea {
-            height: 100px;
-            resize: vertical;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(45deg, #4ecdc4, #45b7af);
-            border: none;
-            border-radius: 12px;
-            color: white;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn:hover {
-            background: linear-gradient(45deg, #45b7af, #3da89f);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        #feedbackContainer {
-            margin-top: 30px;
-        }
-
-        .feedback-item {
-            background: white;
-            margin: 15px 0;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 0.5s ease;
-            border-left: 4px solid #4ecdc4;
-        }
-
-        .feedback-item p {
-            margin: 8px 0;
-            color: #555;
-        }
-
-        .feedback-item strong {
-            color: #2d3436;
-            font-weight: 600;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .floating-emoji {
-            position: absolute;
-            font-size: 24px;
-            opacity: 0.1;
-            pointer-events: none;
-            animation: float 15s infinite linear;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg);
-            }
-            100% {
-                transform: translateY(-100vh) rotate(360deg);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .form {
-                width: 90%;
-                padding: 25px;
-            }
-        }
-    </style>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/feedback.css">
 </head>
 <body>
- 
-    <div class="floating-emoji" style="left: 10%; top: -50px;">😊</div>
-    <div class="floating-emoji" style="left: 30%; top: -30px;">💡</div>
-    <div class="floating-emoji" style="left: 70%; top: -40px;">📝</div>
-    <div class="floating-emoji" style="left: 90%; top: -20px;">🌟</div>
 
-    <div class="form">
-        <form id="feedbackForm">
+    <div class="floating-emoji" style="left: 10%;">😊</div>
+    <div class="floating-emoji" style="left: 30%;">💡</div>
+    <div class="floating-emoji" style="left: 70%;">📝</div>
+    <div class="floating-emoji" style="left: 90%;">🌟</div>
+
+    <main class="form">
+        <form id="feedbackForm" novalidate>
             <h1>Share Your Feedback</h1>
             <div class="input-box">
                 <input type="text" id="username" placeholder="Username" required>
                 <i class='bx bxs-user'></i>
+                <small class="error-message"></small>
             </div>
             <div class="input-box">
                 <input type="email" id="email" placeholder="Email" required>
                 <i class='bx bx-envelope'></i>
+                <small class="error-message"></small>
             </div>
             <div class="input-box">
                 <textarea id="feedback" placeholder="Your valuable feedback..." required></textarea>
+                <small class="error-message"></small>
             </div>
             <button type="submit" class="btn">Submit Feedback</button>
+            <p id="successMessage" class="success-message"></p>
         </form>
         <div id="feedbackContainer"></div>
-    </div>
+    </main>
 
-    <script>
-        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const username = document.getElementById('username').value;
-            const email = document.getElementById('email').value;
-            const feedback = document.getElementById('feedback').value;
-
-            const feedbackItem = document.createElement('div');
-            feedbackItem.classList.add('feedback-item');
-            feedbackItem.innerHTML = `
-                <p><strong>Username:</strong> ${username}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Feedback:</strong> ${feedback}</p>
-            `;
-
-            document.getElementById('feedbackContainer').prepend(feedbackItem);
-            document.getElementById('feedbackForm').reset();
-            
-            // Add hover effect to new feedback item
-            feedbackItem.addEventListener('mouseenter', () => {
-                feedbackItem.style.transform = 'translateX(10px)';
-            });
-            feedbackItem.addEventListener('mouseleave', () => {
-                feedbackItem.style.transform = 'translateX(0)';
-            });
-        });
-
-        // Add random floating emojis
-        const emojis = ['😊', '💡', '🌟', '📝', '👍', '💬', '🎉'];
-        function createFloatingEmoji() {
-            const emoji = document.createElement('div');
-            emoji.className = 'floating-emoji';
-            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-            emoji.style.left = Math.random() * 100 + '%';
-            emoji.style.animationDuration = (Math.random() * 10 + 10) + 's';
-            document.body.appendChild(emoji);
-            
-            setTimeout(() => emoji.remove(), 15000);
-        }
-        setInterval(createFloatingEmoji, 3000);
-    </script>
+    <script src="../js/feedback.js"></script>
 </body>
 </html>

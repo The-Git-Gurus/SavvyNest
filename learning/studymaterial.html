@@ -1,279 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Study Material and Quiz</title>
-    <link rel="icon" href="../images/education.png">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            /* background-image: url(https://wallpaperaccess.com/full/2121414.jpg); */
-            background-color: #150101;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 20px;
-        }
-        h1, h2, h3 {
-            text-align: center;
-            color: #faf6f6;
-            background-color: black;
-            margin-bottom: 50px;
-            padding: 10px;
-            border-radius: 10px;
-        }
-        .material-box, .review-box, .quiz-box {
-            background: #150101;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-        .whatsapp{
-          background-color: rgb(15, 165, 15);
-          border-radius: 10px ;
-          box-shadow:0 4px 8px rgba(0, 0, 0, 0.1) ;
-          margin-bottom: 30px;
-          overflow: hidden;
-          transition: transform 0.3s;
-        }
-        #group{
-          background-color:rgb(20, 231, 20)
-        }
-        .material-box:hover, .review-box:hover, .quiz-box:hover {
-            transform: translateY(-10px);
-        }
-        .material-box h2, .quiz-box h2 {
-            background: #c4c1f6;
-            color: #120101;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-            font-size: 1.5rem;
-        }
-        .material-box p, .quiz-box p {
-            padding: 20px;
-            color: #f1eaea;
-            font-size: 1.2rem;
-        }
-         .material-box:hover, .review-box:hover, .quiz-box:hover {
-            transform: translateY(-10px);
-        }
-        .material-box h2, .quiz-box h2 {
-            background: #c4c1f6;
-            color: #120101;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-            font-size: 1.5rem;
-        }
-        .material-box p, .quiz-box p {
-            padding: 20px;
-            color: #f1eaea;
-            font-size: 1.2rem;
-        }
-        .download, .submit-btn {
-            display: block;
-            text-align: center;
-            padding: 15px;
-            margin: 0 20px 20px;
-            background: #6c63ff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-            cursor: pointer;
-        }
-        .download:hover, .submit-btn:hover {
-            background: #5547d2;
-        }
-        .video-section {
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            margin: l;
-        }
-        .video-link {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            text-decoration: none;
-            color: #f2eeee;
-            margin-left:200px
-        }
-        .whatsapp{
-            width: 100px;
-            height: 80px;
-            object-fit: cover;
-            margin-right: 550px;
-        }
-        .video-thumbnail {
-            width: 300px;
-            height: 180px;
-            object-fit: cover;
-            margin-right: 15px;
-            border-radius: 30px;
-            border: solid;
-            border-color: #120101;
-        }
-        .video-title {
-            font-size: 1rem;
-        }
-        .review-box input, .review-box textarea, .quiz-box input[type="radio"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .reviews, .quiz-box {
-            margin-top: 30px;
-        }
-        .review {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            padding: 20px;
-        }
-        .rev{
-            color:white;
-            text-decoration: none;
-        }
-        .review h3 {
-            margin: 0;
-            color: #6c63ff;
-        }
-        .review p {
-            margin: 10px 0 0;
-            color: #666;
-        }
-        button {
-          margin-left: 50%;
-          margin-right: 50%;
-          background-color: navy;
-          color: white;
-          border: none;
-          padding: 30px 50px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 16px;
-          margin: 4px 2px;
-          cursor: pointer;
-          ;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Study Material - Savvy Nest</title>
+  <link rel="icon" href="../images/education.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0e0c28;
+      color: #fff;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px;
+    }
+    h1, h2 {
+      text-align: center;
+      background: linear-gradient(to right, #6c63ff, #3b2f9c);
+      color: white;
+      border-radius: 15px;
+      padding: 15px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .material-box {
+      background-color: #1d1b42;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .material-box:hover {
+      transform: translateY(-5px);
+    }
+    .material-box h2 {
+      background-color: #fff;
+      color: #1d1b42;
+      padding: 15px;
+      font-size: 1.4rem;
+    }
+    .material-box p {
+      padding: 20px;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+    .download {
+      display: block;
+      background: #6c63ff;
+      text-align: center;
+      padding: 12px;
+      margin: 20px auto;
+      color: #fff;
+      text-decoration: none;
+      width: 200px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .download:hover {
+      background: #5245d2;
+    }
+    .video-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .video-link {
+      text-decoration: none;
+      color: white;
+      max-width: 320px;
+      transition: transform 0.3s;
+    }
+    .video-link:hover {
+      transform: scale(1.05);
+    }
+    .video-thumbnail {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      margin-bottom: 10px;
+    }
+    .video-title {
+      text-align: center;
+      display: block;
+      font-size: 1rem;
+    }
+    .rev {
+      text-decoration: none;
+      color: white;
+    }
+    button {
+      display: block;
+      margin: 30px auto;
+      background: #ff6b6b;
+      border: none;
+      border-radius: 10px;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #e84141;
+    }
+    #group {
+      background-color: #0dd660;
+      color: #000;
+    }
+
+    @media screen and (max-width: 768px) {
+      .video-section {
+        flex-direction: column;
+        align-items: center;
       }
-  
-      
-  
-          
-    </style>
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>WELCOME TO WEB DEVELOPMENT COURSE!</h1>
+  <div class="container">
+    <h1>Welcome to Web Development Course!</h1>
 
-        <div class="material-box">
-            <h2>Task 1</h2>
-            <p>..................................Download the study material for Basic Structure of HTML Website and advanced concepts.....................................</p>
-            <a href="https://www.webdesign.org/downloads/Beginners_Guide_to_HTML.pdf" class="download">Download PDF</a>
-            
-            <div class="video-section">
-                <a href="https://www.youtube.com/watch?v=example1" class="video-link">
-                    <img src="https://i.ytimg.com/vi/0GaM_NYHruc/maxresdefault.jpg" alt="Video 1" class="video-thumbnail">
-                    <span class="video-title">Click Here To Watch Lecture</span>
-                </a>
-                <a href="https://www.bing.com/videos/riverview/relatedvideo?&q=absic+structure+of+html+yt+video&&mid=8689A7FDFFEB1E90A24C8689A7FDFFEB1E90A24C&&FORM=VRDGAR" class="video-link">
-                    <img src="https://aiyoit.com/tutorial/wp-content/uploads/2023/07/basic-structure-of-html-document.webp" alt="Video 2" class="video-thumbnail">
-                    <span class="video-title">Click Here To Watch Lecture</span>
-                </a>
-            </div>
-        </div>
+    <!-- Task 1 -->
+    <div class="material-box">
+      <h2>Task 1</h2>
+      <p>Download the study material for Basic Structure of HTML Website and advanced concepts.</p>
+      <a href="https://www.webdesign.org/downloads/Beginners_Guide_to_HTML.pdf" class="download">Download PDF</a>
+      <div class="video-section">
+        <a href="https://www.youtube.com/watch?v=example1" class="video-link">
+          <img src="https://i.ytimg.com/vi/0GaM_NYHruc/maxresdefault.jpg" class="video-thumbnail"/>
+          <span class="video-title">Watch Lecture</span>
+        </a>
+        <a href="https://www.bing.com/videos/riverview/relatedvideo?&mid=8689A7FDFFEB1E90A24C8689A7FDFFEB1E90A24C" class="video-link">
+          <img src="https://aiyoit.com/tutorial/wp-content/uploads/2023/07/basic-structure-of-html-document.webp" class="video-thumbnail"/>
+          <span class="video-title">Watch Lecture</span>
+        </a>
+      </div>
+    </div>
 
-        <div class="material-box">
-            <h2>Task 2</h2>
-            <p>.....................................................Download the study material for SEO and Core Web Vitals in HTML...................................................</p>
-            <a href="https://html.com/wp-content/uploads/html-cheat-sheet.pdf" class="download">Download PDF</a>
-            
-            <div class="video-section">
-                <a href="https://www.bing.com/videos/riverview/relatedvideo?&q=SEO+and+Core+Web+Vitals+in+HTML+yt+video&&mid=DF236793F814BF00C313DF236793F814BF00C313&&FORM=VRDGAR" class="video-link">
-                    <img src="https://th.bing.com/th?&id=OVP.GDDTeMGYjPggDy325K96iAHgFo&w=254&h=142&c=7&pid=2.1&rs=1" alt="Video 3" class="video-thumbnail">
-                    <span class="video-title">Click Here To Watch Lecture</span>
-                </a>
-                <a href="https://www.bing.com/videos/riverview/relatedvideo?&q=SEO+and+Core+Web+Vitals+in+HTML+yt+video&&mid=DF236793F814BF00C313DF236793F814BF00C313&&FORM=VRDGAR" class="video-link">
-                    <img src="https://th.bing.com/th?&id=OVP.7KPbM9cM7210Dp-1ORcQTwEsDh&w=254&h=142&c=7&pid=2.1&rs=1" alt="Video 4" class="video-thumbnail">
-                    <span class="video-title">Click Here To Watch Lecture</span>
-                </a>
-            </div>
-        </div>
+    <!-- Task 2 -->
+    <div class="material-box">
+      <h2>Task 2</h2>
+      <p>Download the study material for SEO and Core Web Vitals in HTML.</p>
+      <a href="https://html.com/wp-content/uploads/html-cheat-sheet.pdf" class="download">Download PDF</a>
+      <div class="video-section">
+        <a href="https://www.bing.com/videos/riverview/relatedvideo?&mid=DF236793F814BF00C313DF236793F814BF00C313" class="video-link">
+          <img src="https://th.bing.com/th?&id=OVP.GDDTeMGYjPggDy325K96iAHgFo&w=254&h=142" class="video-thumbnail"/>
+          <span class="video-title">Watch Lecture</span>
+        </a>
+        <a href="https://www.bing.com/videos/riverview/relatedvideo?&mid=DF236793F814BF00C313DF236793F814BF00C313" class="video-link">
+          <img src="https://th.bing.com/th?&id=OVP.7KPbM9cM7210Dp-1ORcQTwEsDh&w=254&h=142" class="video-thumbnail"/>
+          <span class="video-title">Watch Lecture</span>
+        </a>
+      </div>
+    </div>
 
-        <div class="material-box">
-            <h2>Task 3</h2>
-            <p>...................................................Click below to download study material for CSS (Cascading Style Sheets).............................................</p>
-            <a href="https://www.cssbasics.com/full.pdf" class="download">Download PDF</a>
-            
-            <div class="video-section" >
-                <a href="https://www.youtube.com/watch?v=qKoajPPWpmo" class="video-link">
-                    <img src="https://i.ytimg.com/vi/qKoajPPWpmo/maxresdefault.jpg" alt="Video 5" class="video-thumbnail">
-                    <span class="video-title">Click Here To Watch Lecture</span>
-                </a>
-                <a href="https://www.youtube.com/watch?v=qKoajPPWpmo" class="video-link">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdZhx3ubG8oUEp_J2uCSyC8sQ7QN64lVYHU8-c8JqfYD-Ah9uSeTLwodT9OCcf44W2XuoXUzt1af3TZouMKt65GG8IyVvfTxUG76jqGyzYuw5dFIPtkIxtpl1D4S1vPS55bG3eziqClHhrfgu23YYzTtSH5tD388aWq-tQ6vFxnnPpUeomp_uIng2VVmg/w640-h360/CSS%20Selector%20Types.jpg" alt="Video 6" class="video-thumbnail">
-                    <span class="video-title">Click Here To Watch Lecture</span>
-                </a>
-            </div>
-        </div>
-        <br>
-        <br><br>
+    <!-- Task 3 -->
+    <div class="material-box">
+      <h2>Task 3</h2>
+      <p>Click below to download study material for CSS (Cascading Style Sheets).</p>
+      <a href="https://www.cssbasics.com/full.pdf" class="download">Download PDF</a>
+      <div class="video-section">
+        <a href="https://www.youtube.com/watch?v=qKoajPPWpmo" class="video-link">
+          <img src="https://i.ytimg.com/vi/qKoajPPWpmo/maxresdefault.jpg" class="video-thumbnail"/>
+          <span class="video-title">Watch Lecture</span>
+        </a>
+        <a href="https://www.youtube.com/watch?v=qKoajPPWpmo" class="video-link">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdZhx3ubG8oUEp_J2uCSyC8sQ7QN64lVYHU8-c8JqfYD-Ah9uSeTLwodT9OCcf44W2XuoXUzt1af3TZouMKt65GG8IyVvfTxUG76jqGyzYuw5dFIPtkIxtpl1D4S1vPS55bG3eziqClHhrfgu23YYzTtSH5tD388aWq-tQ6vFxnnPpUeomp_uIng2VVmg/w640-h360/CSS%20Selector%20Types.jpg" class="video-thumbnail"/>
+          <span class="video-title">Watch Lecture</span>
+        </a>
+      </div>
+    </div>
 
-        <div class="material-box">
-            <h2 id="group">Group Link</h2>
-            <p>............................................................Click on the button below to join the WhatsApp group.......................................................</p>
-          
-            <a href="https://chat.whatsapp.com/invite/Cuw6zcBYRfyEjx73BKP846" class="download">Click Here</a>
-        </div>
+    <!-- Group -->
+    <div class="material-box">
+      <h2 id="group">Join WhatsApp Group</h2>
+      <p>Click on the button below to join the WhatsApp group.</p>
+      <a href="https://chat.whatsapp.com/invite/Cuw6zcBYRfyEjx73BKP846" class="download">Join Now</a>
+    </div>
 
-        <div class="container">
-            <h2>Course Reviews</h2>
-            <button><a href="../feedback/feedbackform.html" class="rev">CLICK TO REVIEW COURSE!!</a></button>
-        </div>
-        
+    <!-- Reviews -->
+    <h2>Course Reviews</h2>
+    <button><a href="../feedback/feedbackform.html" class="rev">Click to Review Course</a></button>
 
-    <h1>Check your Knowledge Through a Quiz !</h1>
+    <!-- Quiz -->
+    <h1>Check Your Knowledge Through a Quiz!</h1>
     <a href="quiz.html"><button>Attempt Quiz</button></a>
-
-
-       <script>
-
-              function submitReview() {
-                const reviewerName = document.getElementById("reviewer-name").value;
-                const reviewText = document.getElementById("review-text").value;
-              
-                const reviewElement = document.createElement("div");
-                reviewElement.classList.add("review");
-                reviewElement.innerHTML = `
-                  <h4>${reviewerName}</h4>
-                  <p>${reviewText}</p>
-                `;
-              
-                const reviewsDiv = document.getElementById("reviews");
-                reviewsDiv.appendChild(reviewElement);
-              
-                document.getElementById("reviewer-name").value = "";
-                document.getElementById("review-text").value = "";
-              }
-              
-          </script>
-
-        </body>
-        </html>
-
-
-
-     
+  </div>
+</body>
+</html>
