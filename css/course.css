@@ -17,7 +17,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: hsl(66, 88%, 62%);
+            background-image:linear-gradient(to top right,orange,rgb(212, 212, 31));
             padding: 15px 50px;
             color: #000000;
             position: sticky;
@@ -50,7 +50,7 @@
         }
 
         .nav-links a {
-            color: #fff;
+            color: #000000;
             text-decoration: none;
             font-size: 16px;
             transition: color 0.3s;
@@ -65,8 +65,8 @@
         header {
             text-align: center;
             padding: 50px 20px;
-            background: linear-gradient(135deg, #7b961951, #c6ba0fd7);
-            color: #fff;
+            background-image:linear-gradient(to top right,orange,rgb(212, 212, 31));
+            color: #000000;
             animation: fadeIn 1s ease-in;
         }
 
