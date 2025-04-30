@@ -4,34 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login - Savvy Nest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="../images/education.png">
-    <link rel="stylesheet" href="../css/loginnnn.css" />
-    <script src="../js/loginnnn.js"></script>
-</head>
-
+    <link rel="stylesheet" href="../css/login.css" />
+    </head>
 <body>
-    <form name="loginForm" action="../index.html" onsubmit="return validateForm()">
-    <div class="login">
-        <div class="login1">
-            <div class="login2">
-                <img src="../images/education.png" width="150px" height="150px" id="logo">
+    <div class="bg-pattern"></div>
+    <div class="login-container">
+        <div class="header">
+            <img src="../images/education.png" id="logo" alt="Savvy Nest Logo">
+            <h1 id="name">Savvy Nest</h1>
+        </div>
+        <div class="content">
+            <div class="tagline">
+                "Where Curiosity Sparks Innovation!"
             </div>
-            <div class="login2" id="name">LEARN SPHERE</div>
-        </div>
-        <div class="login3">
-            <div class="login4" id="tagline"><p>"Where Curiosity Sparks Innovation!"</p>
-        </div>
-        <div class="login5" id="loginform">
-            <h1>LOGIN</h1><br><br>
-            <label for="email">Email ID</label>
-            <input type="email" name="email" id="email" placeholder="Enter Here"><br><br>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" placeholder="Enter Here"><br><br>
-           <input type="submit" value="LOGIN" id="login4">
-           <p>Don't have an account? <a href="signnuppp.html"><b>sign up</b></a></p>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="login-btn">Sign In</button>
+                <div class="links">
+                    <a href="signnuppp.html">Create Account</a> • 
+                    <a href="#">Forgot Password?</a>
+                </div>
+            </form>
         </div>
     </div>
-    </div>
-</form>
+    <script src="../js/login.js"></script>
 </body>
 </html>
