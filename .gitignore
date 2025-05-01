@@ -5,7 +5,7 @@ node_modules/
 .DS_Store
 Thumbs.db
 
-# VS Code settings (if your team uses VSCode)
+# VS Code settings(if your team uses VSCode)
 .vscode/
 
 # Log files
