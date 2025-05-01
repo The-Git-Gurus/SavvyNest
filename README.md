@@ -38,22 +38,21 @@ Welcome to *Savvy Nest* — a modern learning platform designed to empower learn
 - *JavaScript* – DOM manipulation and interactivity
 
 ## 📂 Folder Structure
-## Folder Structure
 
 SavvyNest/
-├── about/           # About section pages
-├── courses/         # Course-related content
-├── css/             # Stylesheets
-├── feedback/        # Feedback or contact form
-├── images/          # Images and icons
-├── js/              # JavaScript files
-├── learning/        # Learning modules or content
-├── login/           # Login-related files
-├── CONTRIBUTING.md  # Contribution guidelines
-├── LICENSE          # MIT License file
-├── .gitignore       # Specifies intentionally untracked files
-├── index.html       # Main landing page
-└── README.md        # Project overview
+├── about/           # About section pages                     <br>
+├── courses/         # Course-related content                  <br>
+├── css/             # Stylesheets                             <br>
+├── feedback/        # Feedback or contact form                <br>
+├── images/          # Images and icons                        <br>
+├── js/              # JavaScript files                        <br>
+├── learning/        # Learning modules or content             <br>
+├── login/           # Login-related files                     <br>
+├── CONTRIBUTING.md  # Contribution guidelines                 <br>
+├── LICENSE          # MIT License file                        <br>
+├── .gitignore       # Specifies intentionally untracked files <br>
+├── index.html       # Main landing page                       <br>
+└── README.md        # Project overview                        <br>
 
 
 ## 📸 Screenshots
