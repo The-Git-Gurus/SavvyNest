@@ -40,7 +40,7 @@ function addToCart(courseName, price) {
                 course4: {
                     title: 'Digital Marketing',
                     description: 'Master SEO, social media, and online advertising strategies.',
-                    price: '₹5,500'
+                    price: '₹5,5000'
                 },
                 course5: {
                     title: 'Python',
