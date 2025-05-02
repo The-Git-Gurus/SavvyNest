@@ -58,7 +58,7 @@ function addToCart(courseName, price) {
                     price: '₹3,300'
                 },
                 course8: {
-                    title: 'Artificial Intelligence',
+                    title: 'artificial Intelligence',
                     description: 'Build AI algorithms, software infrastructure, and data pipelines.',
                     price: '₹6,500'
                 },
