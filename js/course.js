@@ -35,7 +35,7 @@ function addToCart(courseName, price) {
                 course3: {
                     title: 'Graphic Design',
                     description: 'Create stunning visuals using Adobe Photoshop, Illustrator, and design principles.',
-                    price: '₹3,500'
+                    price: '₹3,50000'
                 },
                 course4: {
                     title: 'Digital Marketing',
