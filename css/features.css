@@ -16,13 +16,7 @@ body{
     font-size:35px
 }
 
-.navbar{
-    display:flex;
-    width: 40%;
-    justify-content: space-evenly;
-    margin-left:45%;
-    gap:35px
-}
+
 
 .navbar a{
     color:black;
