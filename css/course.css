@@ -24,7 +24,11 @@
             z-index: 100;
         }
 
-        
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
         .navbar .logo img {
             width: 40px;
             margin-right: 10px;
