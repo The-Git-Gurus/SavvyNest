@@ -16,12 +16,7 @@
         display: flex;
         flex-direction: row;
     }
-    #logo {
-        margin-left: 30px;
-        margin-top: 20px;
-        height: 100px;
-        width: 100px;
-    }
+
     #name {
         height: fit-content;
         margin: 30px;
