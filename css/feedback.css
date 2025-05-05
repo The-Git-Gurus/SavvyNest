@@ -12,9 +12,9 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-    position: relative;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
     overflow: hidden;
+    position: relative;
     padding: 20px;
 }
 
@@ -23,47 +23,57 @@ main.form {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 10;
 }
 
 main.form:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+    transform: translateY(-6px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
     text-align: center;
-    font-size: 32px;
+    font-size: 34px;
     margin-bottom: 30px;
-    background: linear-gradient(45deg, #4ecdc4, #ff6b6b);
+    background: linear-gradient(90deg, #4ecdc4, #ff6b6b);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: pulseText 2s infinite;
+}
+
+@keyframes pulseText {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
 }
 
 .input-box {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     position: relative;
+    transition: transform 0.3s ease;
 }
 
 .input-box input,
 .input-box textarea {
     width: 100%;
-    padding: 14px 18px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
+    padding: 16px 18px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
     font-size: 16px;
     background: #fff;
-    transition: 0.3s;
+    transition: 0.3s ease-in-out;
 }
 
 .input-box input:focus,
 .input-box textarea:focus {
     border-color: #4ecdc4;
-    box-shadow: 0 0 10px rgba(78, 205, 196, 0.3);
+    box-shadow: 0 0 12px rgba(78, 205, 196, 0.4);
     outline: none;
+    transform: scale(1.02);
 }
 
 .input-box i {
@@ -71,7 +81,8 @@ h1 {
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    color: #666;
+    color: #777;
+    font-size: 18px;
 }
 
 textarea {
@@ -84,17 +95,18 @@ textarea {
     padding: 14px;
     background: linear-gradient(45deg, #4ecdc4, #45b7af);
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     color: #fff;
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background 0.3s, transform 0.2s ease;
 }
 
 .btn:hover {
-    background: linear-gradient(45deg, #45b7af, #3da89f);
-    transform: translateY(-2px);
+    background: linear-gradient(45deg, #3da89f, #45b7af);
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 #feedbackContainer {
@@ -102,36 +114,44 @@ textarea {
 }
 
 .feedback-item {
-    background: #fff;
+    background: #ffffff;
     margin-bottom: 20px;
     padding: 20px;
-    border-left: 5px solid #4ecdc4;
-    border-radius: 10px;
-    animation: fadeIn 0.5s ease forwards;
+    border-left: 6px solid #4ecdc4;
+    border-radius: 12px;
+    animation: fadeInScale 0.6s ease forwards;
+    transform: scale(0.95);
     opacity: 0;
+    transition: transform 0.3s ease;
+}
+
+.feedback-item:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .feedback-item p {
-    color: #555;
+    color: #444;
     margin-bottom: 8px;
 }
 
 .feedback-item strong {
-    color: #2d3436;
+    color: #222;
 }
 
-@keyframes fadeIn {
+@keyframes fadeInScale {
     to {
+        transform: scale(1);
         opacity: 1;
     }
 }
 
 .floating-emoji {
     position: absolute;
-    font-size: 24px;
-    opacity: 0.1;
+    font-size: 26px;
+    opacity: 0.15;
     pointer-events: none;
-    animation: float 15s infinite linear;
+    animation: float 15s infinite linear, drift 4s ease-in-out infinite alternate;
     top: -50px;
 }
 
@@ -140,7 +160,16 @@ textarea {
         transform: translateY(0) rotate(0deg);
     }
     100% {
-        transform: translateY(100vh) rotate(360deg);
+        transform: translateY(110vh) rotate(720deg);
+    }
+}
+
+@keyframes drift {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(30px);
     }
 }
 
@@ -148,13 +177,15 @@ textarea {
     text-align: center;
     margin-top: 15px;
     font-size: 16px;
-    color: green;
+    color: #2ecc71;
+    font-weight: 600;
     display: none;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .error-message {
-    font-size: 12px;
-    color: red;
+    font-size: 13px;
+    color: #e74c3c;
     margin-top: 5px;
     display: none;
 }

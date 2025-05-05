@@ -1,42 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Form - Savvy Nest</title>
-    <link rel="icon" href="../images/education.png">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/feedback.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback Form - Savvy Nest</title>
+  <link rel="icon" href="../images/education.png" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #ff6b6b, #38f9d7);
+      min-height: 100vh;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background-color: #ffffff;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .navbar a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #007bff;
+    }
+
+    .navbar .a1 {
+      font-weight: bold;
+      color: #fff;
+      background: #007bff;
+      padding: 5px 15px;
+      border-radius: 5px;
+    }
+
+    main.form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 24px;
+      background: linear-gradient(to right, #00b4db, #0083b0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .input-box {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 40px 12px 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .input-box i {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      font-size: 20px;
+      color: #aaa;
+    }
+
+    .char-counter {
+      font-size: 12px;
+      text-align: right;
+      margin-top: 4px;
+      color: #666;
+    }
+
+    .rating-label {
+      font-weight: 500;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .rating-options {
+      display: flex;
+      justify-content: space-between;
+      font-size: 24px;
+      margin: 5px 0 15px;
+      cursor: pointer;
+    }
+
+    .rating-options .emoji:hover,
+    .rating-options .emoji.selected {
+      transform: scale(1.2);
+    }
+
+    .btn {
+      width: 100%;
+      background: #00b894;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #019875;
+    }
+
+    .success-message {
+      text-align: center;
+      color: green;
+      margin-top: 15px;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .modal .btn {
+      margin: 10px 5px 0;
+      width: auto;
+      padding: 10px 20px;
+    }
+
+    .btn-cancel {
+      background: #ccc;
+      color: #000;
+    }
+
+    .floating-emoji {
+      position: absolute;
+      animation: float 6s ease-in-out infinite;
+      top: 5%;
+      font-size: 24px;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="floating-emoji" style="left: 10%;">😊</div>
-    <div class="floating-emoji" style="left: 30%;">💡</div>
-    <div class="floating-emoji" style="left: 70%;">📝</div>
-    <div class="floating-emoji" style="left: 90%;">🌟</div>
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="index.html" class="a">Home</a>
+    <a href="courses/features.html" class="a">Features</a>
+    <a href="courses/course.html" class="a">Courses</a>
+    <a href="courses/faculty.html" class="a">Faculty</a>
+    <a href="login/login.html" class="a">LogIn</a>
+    <a href="about/aboutus.html" class="a">AboutUs</a>
+    <a href="login/signnuppp.html" class="a1">SignUp</a>
+  </div>
 
-    <main class="form">
-        <form id="feedbackForm" novalidate>
-            <h1>Share Your Feedback</h1>
-            <div class="input-box">
-                <input type="text" id="username" placeholder="Username" required>
-                <i class='bx bxs-user'></i>
-                <small class="error-message"></small>
-            </div>
-            <div class="input-box">
-                <input type="email" id="email" placeholder="Email" required>
-                <i class='bx bx-envelope'></i>
-                <small class="error-message"></small>
-            </div>
-            <div class="input-box">
-                <textarea id="feedback" placeholder="Your valuable feedback..." required></textarea>
-                <small class="error-message"></small>
-            </div>
-            <button type="submit" class="btn">Submit Feedback</button>
-            <p id="successMessage" class="success-message"></p>
-        </form>
-        <div id="feedbackContainer"></div>
-    </main>
-    <script src="../js/feedback.js"></script>
+  <!-- Floating Emojis -->
+  <div class="floating-emoji" style="left: 10%;">😊</div>
+  <div class="floating-emoji" style="left: 30%;">💡</div>
+  <div class="floating-emoji" style="left: 70%;">📝</div>
+  <div class="floating-emoji" style="left: 90%;">🌟</div>
+
+  <!-- Main Form -->
+  <main class="form">
+    <form id="feedbackForm" novalidate>
+      <h1>Share Your Feedback</h1>
+
+      <div class="input-box">
+        <input type="text" id="username" placeholder="Username" required />
+        <i class="bx bxs-user"></i>
+      </div>
+
+      <div class="input-box">
+        <input type="email" id="email" placeholder="Email" required />
+        <i class="bx bx-envelope"></i>
+      </div>
+
+      <div class="input-box">
+        <select id="category" required>
+          <option value="">-- Select Feedback Category --</option>
+          <option value="UI/UX">UI/UX Design</option>
+          <option value="Content">Content Quality</option>
+          <option value="Bugs">Bug Report</option>
+          <option value="Feature">Feature Request</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="input-box">
+        <label class="rating-label">Rate your experience:</label>
+        <div class="rating-options" id="ratingOptions">
+          <span class="emoji" data-value="1">😡</span>
+          <span class="emoji" data-value="2">😕</span>
+          <span class="emoji" data-value="3">😐</span>
+          <span class="emoji" data-value="4">😊</span>
+          <span class="emoji" data-value="5">😍</span>
+        </div>
+        <input type="hidden" id="rating" />
+      </div>
+
+      <div class="input-box">
+        <textarea id="feedback" placeholder="Your valuable feedback..." maxlength="500" required></textarea>
+        <div class="char-counter" id="charCounter">0 / 500</div>
+      </div>
+
+      <button type="submit" class="btn">SUBMIT FEEDBACK</button>
+      <p id="successMessage" class="success-message"></p>
+    </form>
+  </main>
+
+  <!-- Modal (optional) -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <p>Are you sure you want to submit this feedback?</p>
+      <button id="confirmSubmit" class="btn">YES, SUBMIT</button>
+      <button id="cancelSubmit" class="btn btn-cancel">CANCEL</button>
+    </div>
+  </div>
+
+  <script>
+    // Character counter
+    const feedbackInput = document.getElementById('feedback');
+    const charCounter = document.getElementById('charCounter');
+
+    feedbackInput.addEventListener('input', () => {
+      charCounter.textContent = `${feedbackInput.value.length} / 500`;
+    });
+
+    // Rating selection
+    const ratingEmojis = document.querySelectorAll('.emoji');
+    const ratingInput = document.getElementById('rating');
+
+    ratingEmojis.forEach(emoji => {
+      emoji.addEventListener('click', () => {
+        ratingEmojis.forEach(e => e.classList.remove('selected'));
+        emoji.classList.add('selected');
+        ratingInput.value = emoji.getAttribute('data-value');
+      });
+    });
+  </script>
+
 </body>
 </html>
