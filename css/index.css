@@ -74,3 +74,58 @@
         background: #F1F0F0;
         float: left;
     }
+    /* Animate header on load */
+.symbol h1 {
+    animation: slideFadeIn 1.5s ease-in-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes slideFadeIn {
+    from {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  
+  /* Navbar hover effect */
+  .navbar .a, .navbar .a1 {
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .navbar .a:hover, .navbar .a1:hover {
+    color: #ffd700;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+  
+  /* Button */
+  .a2 {
+    padding: 12px 24px;
+    background: linear-gradient(45deg, #f9a825, #fdd835);
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .a2:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  }
+  
+  /* Testimonial hover */
+  .testimonial1 {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .testimonial1:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+  
